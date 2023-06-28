@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PgupsApp.LoginPage"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Path Stroke="#ffff" Data="m-5.18519,-77.56916l471.11104,0l0,204.5758c-212.49032,-2.39096 -252.38617,78.74412 -471.11104,33.65899l0,-238.2348z"
+              Fill="{StaticResource MainColor}"/>
+        <StackLayout>
+            <Frame BackgroundColor="{StaticResource LightGreenColor}" 
+                   HeightRequest="100" 
+                   WidthRequest="100" 
+                   CornerRadius="50" 
+                   Padding="0" 
+                   Margin="0, 100, 0, 0" 
+                   HorizontalOptions="Center"
+                   BorderColor="Black">
+                
+                <Image Source="pgups.svg" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+        </StackLayout>
+        <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" 
+                   Text="Добро пожаловать!" 
+                   HorizontalOptions="Center" 
+                   FontSize="Title" 
+                   FontAttributes="Bold" 
+                   Padding="0"
+                   Margin="0"/>
+            <Label Grid.Row="2" 
+                   Text="Войдите чтобы продолжить"
+                   HorizontalOptions="Center" 
+                   FontSize="Subtitle" 
+                   FontAttributes="Bold" 
+                   Padding="0"
+                   Margin="0"/>
+
+            <StackLayout Grid.Row="3" 
+                         Orientation="Vertical" 
+                         HorizontalOptions="CenterAndExpand"
+                         MinimumWidthRequest="370">
+                <Frame BackgroundColor="Transparent"
+                       BorderColor="{StaticResource LightGreenColor}"
+                       Padding="0"
+                       HorizontalOptions="FillAndExpand"
+                       CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="{StaticResource LightGreenColor}" 
+                               HeightRequest="40" 
+                               WidthRequest="40"
+                               CornerRadius="30"
+                               Padding="0"
+                               Margin="5">
+                            
+                            <Image Source="personicon300.svg"
+                                   Aspect="AspectFill"
+                                   Margin="0"
+                           />  
+                        </Frame>
+                        <Entry Text="{Binding UserName}"
+                               Placeholder="Имя пользователя"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="FillAndExpand"
+                               Margin="0, 0, 20, 0"/>
+                    </StackLayout>
+                  
+                </Frame>
+                
+                <Frame BackgroundColor="Transparent"
+                       BorderColor="{StaticResource LightGreenColor}"
+                       Margin="0, 15, 0, 0"
+                       Padding="0"
+                       HorizontalOptions="FillAndExpand"
+                       CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="{StaticResource LightGreenColor}" 
+                               HeightRequest="40" 
+                               WidthRequest="40"
+                               CornerRadius="30"
+                               Padding="0"
+                               Margin="5">
+
+                            <Image Source="passwordicon300.svg"
+                                   Aspect="AspectFill"
+                                   Margin="0"
+                                   WidthRequest="30"
+                                   HeightRequest="30"
+                           />
+                        </Frame>
+                        <Entry Text="{Binding Password}"
+                               Placeholder="Пароль"
+                               IsPassword="True"
+                               TextColor="Black"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="FillAndExpand"
+                               Margin="0, 0, 20, 0"/>
+                    </StackLayout>
+
+                </Frame>
+
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0 ,0" Padding="0">
+                    <CheckBox IsChecked="False" Color="{StaticResource LightGreenColor}"/>
+                    <Label Text="Запомнить меня" 
+                           TextColor="DarkGray" 
+                           FontSize="Small" 
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="Забыли пароль"
+                           TextColor="{StaticResource LightGreenColor}"
+                           FontAttributes="Bold"
+                           HorizontalOptions="EndAndExpand"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           />
+                </StackLayout>
+
+                <Button Text="Войти" 
+                        BackgroundColor="{StaticResource MainColor}"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="30"
+                        WidthRequest="200"
+                        Margin="0, 15, 0, 0"
+                        Command="{Binding LoginCommand}"/>
+
+            </StackLayout>
+        </Grid>
+        
+    </Grid>
+</ContentPage>
