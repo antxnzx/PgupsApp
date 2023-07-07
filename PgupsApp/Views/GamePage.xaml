@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUILearn.GamePage"
+             Title="GamePage">
+    <Grid ColumnSpacing="2" RowSpacing="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="b00" Grid.Row="0" Grid.Column="0" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b01" Grid.Row="0" Grid.Column="1" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b02" Grid.Row="0" Grid.Column="2" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b03" Grid.Row="0" Grid.Column="3" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+
+        <Button x:Name="b10" Grid.Row="1" Grid.Column="0" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b11" Grid.Row="1" Grid.Column="1" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b12" Grid.Row="1" Grid.Column="2" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b13" Grid.Row="1" Grid.Column="3" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+
+        <Button x:Name="b20" Grid.Row="2" Grid.Column="0" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b21" Grid.Row="2" Grid.Column="1" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b22" Grid.Row="2" Grid.Column="2" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b23" Grid.Row="2" Grid.Column="3" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+
+        <Button x:Name="b30" Grid.Row="3" Grid.Column="0" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b31" Grid.Row="3" Grid.Column="1" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b32" Grid.Row="3" Grid.Column="2" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        <Button x:Name="b33" Grid.Row="3" Grid.Column="3" Text="1" Clicked="Button_Clicked" BackgroundColor="RoyalBlue"/>
+        
+    </Grid>
+</ContentPage>
