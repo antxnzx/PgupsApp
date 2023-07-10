@@ -15,10 +15,7 @@ namespace PgupsApp.ViewModels
         [ObservableProperty]
         private string _password;
         
-        [RelayCommand]
-        public async void Login()
-        {
 
-        }
+
     }
 }
