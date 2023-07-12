@@ -12,6 +12,7 @@ namespace PgupsApp.ViewModels
 {
     internal class NumberGameViewModel : ObservableObject
     {
+        public bool IsGameStarted { get; set; }
         public int[] Buttons { get; set; }
         NumberGameModel Game { get; set; }
         public ICommand StartGameCommand { get; }
@@ -23,21 +24,29 @@ namespace PgupsApp.ViewModels
             NextStepCommand = new RelayCommand<string>(NextStep);
             StartGameCommand = new RelayCommand(StartGame);
             Buttons = new int[16];
+            IsGameStarted = false;
         }
 
         private void StartGame()
         {
+            IsGameStarted = true;
             Game.RefreshNumbers();
             Buttons = Game.numbers;
             Game.CorrectAnswer = 1;
-            OnPropertyChanged(nameof(Buttons));
+            RefreshProperties();
         }
 
         private void NextStep(string number)
         {
             Game.CheckAnswer(number);
             Buttons = Game.numbers;
+            RefreshProperties();
+        }
+
+        private void RefreshProperties()
+        {
             OnPropertyChanged(nameof(Buttons));
+            OnPropertyChanged(nameof(IsGameStarted));
         }
     }
 }
