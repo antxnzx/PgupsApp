@@ -8,8 +8,8 @@
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate views:GamePage}"
+
+        ContentTemplate="{DataTemplate views:ProfilePage}"
         Route="MainPage" />
 
 </Shell>
