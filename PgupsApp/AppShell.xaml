@@ -4,12 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PgupsApp"
-    xmlns:views="clr-namespace:PgupsApp.Views"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:views="clr-namespace:PgupsApp.Views">
 
     <ShellContent
+        Title="Login Page"
+        FlyoutItemIsVisible="False"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage" />
 
-        ContentTemplate="{DataTemplate views:ProfilePage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Home" Icon="homeicon500.svg">
+            <ShellContent
+                Title="Home Page"
+                ContentTemplate="{DataTemplate views:HomePage}"
+                Route="HomePage" />
+        </Tab>
+        <Tab Title="Profile" Icon="personicon500.svg">
+            <ShellContent
+                Title="Profile Page"
+                ContentTemplate="{DataTemplate views:ProfilePage}"
+                Route="ProfilePage" />
+        </Tab>
+    </TabBar>
 
 </Shell>

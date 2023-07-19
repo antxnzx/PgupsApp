@@ -1,20 +1,18 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.Input;
+using PgupsApp.Views;
 
 namespace PgupsApp.ViewModels
 {
     public partial class LoginPageViewModel : BaseViewModel
     {
-        [ObservableProperty]
-        private string _userName;
-        [ObservableProperty]
-        private string _password;
-        
+        #region Commands
+        [RelayCommand]
+        async void Login()
+        {
+           await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+        }
+        #endregion
+
 
 
     }

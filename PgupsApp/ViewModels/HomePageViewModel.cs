@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PgupsApp.ViewModels
+{
+    public partial class HomePageViewModel : BaseViewModel
+    {
+        public HomePageViewModel() 
+        {
+            Title = "Добро пожаловать!";
+        }
+    }
+}
