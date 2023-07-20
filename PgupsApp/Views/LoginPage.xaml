@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.LoginPage"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
+             xmlns:models="clr-namespace:PgupsApp.Models"
              Title="LoginPage"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False">
@@ -78,12 +79,12 @@
                                Padding="0"
                                Margin="5">
 
-                                <Image Source="personicon300.svg"
+                                <Image Source="{x:Static models:Icons.Person300}"
                                    Aspect="AspectFill"
                                    Margin="0"
                            />
                             </Frame>
-                            <Entry Text="{Binding UserName}"
+                            <Entry Text="{Binding Email}"
                                Placeholder="Имя пользователя"
                                TextColor="Black"
                                FontAttributes="Bold"
@@ -108,7 +109,7 @@
                                Padding="0"
                                Margin="5">
 
-                                <Image Source="lockicon300.svg"
+                                <Image Source="{x:Static models:Icons.Lock300}"
                                    Aspect="AspectFill"
                                    Margin="0"
                                    WidthRequest="30"
