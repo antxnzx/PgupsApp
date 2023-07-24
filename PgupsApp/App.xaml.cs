@@ -1,7 +1,10 @@
-﻿namespace PgupsApp;
+﻿using PgupsApp.Models;
+
+namespace PgupsApp;
 
 public partial class App : Application
 {
+	public static UserBasicInfo UserDetails;
 	public App()
 	{
 		InitializeComponent();

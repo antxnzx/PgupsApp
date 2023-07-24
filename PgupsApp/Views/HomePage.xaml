@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.HomePage"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
-             Title="HomePage">
+             Title="HomePage"
+             Shell.BackgroundColor="{StaticResource MainColor}">
     <ContentPage.BindingContext>
         <viewModels:HomePageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>

@@ -23,10 +23,14 @@ public static class MauiProgram
 		//views
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<HomePage>();
+		builder.Services.AddSingleton<LoadingPage>();
+		builder.Services.AddSingleton<GamePage>();
 
 		//viewModels
 		builder.Services.AddSingleton<LoginPageViewModel>();
 		builder.Services.AddSingleton<HomePageViewModel>();
+		builder.Services.AddSingleton<LoadingPageViewModel>();
+		builder.Services.AddSingleton<GamePage>();
 
 		return builder.Build();
 	}
