@@ -7,7 +7,7 @@
              Shell.NavBarIsVisible="False"
              Shell.NavBarHasShadow="True"
              Shell.BackgroundColor="{StaticResource MainColor}"
-             BackgroundColor="LightGray">
+             BackgroundColor="{StaticResource BackgroundColor}">
     <ContentPage.BindingContext>
         <viewModels:ProfilePageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>

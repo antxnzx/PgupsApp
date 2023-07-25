@@ -13,5 +13,6 @@
             Text="{Binding Title}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button Text="1234121"/>
     </VerticalStackLayout>
 </ContentPage>
