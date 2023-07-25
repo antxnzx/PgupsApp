@@ -4,12 +4,37 @@
 
     <Style x:Key="GameButtons" TargetType="Button">
         <Setter Property="TextColor" Value="Black" />
-        <Setter Property="BackgroundColor" Value="RoyalBlue"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource LightGreenColor}"/>
         <Setter Property="FontSize" Value="50"/>
         <Setter Property="CornerRadius" Value="8"/>
         <Setter Property="MinimumHeightRequest" Value="44"/>
         <Setter Property="MinimumWidthRequest" Value="44"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="Black" />
+                            <Setter Property="BackgroundColor" Value="{StaticResource DisabledGreedColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
 
     </Style>
-    
+
+    <Style x:Key="MyTabBar" TargetType="Shell" ApplyToDerivedTypes="True">
+
+        <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource MainColor}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource MainColor}" />
+        
+    </Style>
+
+    <Style TargetType="ImageButton" x:Key="MenuIcons">
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="WidthRequest" Value="50"/>
+    </Style>
+
 </ResourceDictionary>

@@ -2,16 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.ProfilePage"
+             xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
              Title="Profile"
              Shell.NavBarIsVisible="False"
              Shell.NavBarHasShadow="True"
              Shell.BackgroundColor="{StaticResource MainColor}"
-             BackgroundColor="LightGray">
-    <Grid RowSpacing="5">
+             BackgroundColor="{StaticResource BackgroundColor}">
+    <ContentPage.BindingContext>
+        <viewModels:ProfilePageViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <Grid RowSpacing="5" Padding="0,0,0,7">
         <Grid.RowDefinitions>
             <RowDefinition Height="220"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="70" />
         </Grid.RowDefinitions>
         <BoxView Color="White" 
                  HeightRequest="220"
@@ -35,8 +40,8 @@
             </Frame>
             <HorizontalStackLayout Spacing="7" HorizontalOptions="Center"
                                    Margin="0, 20, 0, 0">
-                <Label x:Name="Name" Text="Имя" FontSize="Title"/>
-                <Label x:Name="Surname" Text="Фамилия" FontSize="Title"/>
+                <Label x:Name="Name" Text="{Binding Name}" FontSize="Title"/>
+                <Label x:Name="Surname" Text="{Binding Surname}" FontSize="Title"/>
             </HorizontalStackLayout>
         </StackLayout>
 
@@ -56,8 +61,20 @@
                          ProgressColor="{StaticResource MainColor}" VerticalOptions="Center"/>
         </VerticalStackLayout>
 
-        
-        
+        <BoxView Color="White" 
+                 HeightRequest="70"
+                 CornerRadius="10"
+                 Margin="0"
+                 VerticalOptions="Start"
+                 Grid.Row="3"
+                 />
+        <VerticalStackLayout Grid.Row="3" Margin="10" VerticalOptions="Center">
+            <Button Text="Выйти" BackgroundColor="{StaticResource MainColor}"
+                    Command="{Binding SignOutCommand}"/>
+        </VerticalStackLayout>
+
+
+
 
 
 

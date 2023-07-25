@@ -2,11 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.HomePage"
-             Title="HomePage">
+             xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
+             Title="HomePage"
+             Shell.BackgroundColor="{StaticResource MainColor}">
+    <ContentPage.BindingContext>
+        <viewModels:HomePageViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="{Binding Title}"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button Text="1234121"/>
     </VerticalStackLayout>
 </ContentPage>

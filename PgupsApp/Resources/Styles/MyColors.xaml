@@ -3,4 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Color x:Key="MainColor">#337a61</Color>
     <Color x:Key="LightGreenColor">#45a885</Color>
+    <Color x:Key="DisabledGreedColor">#a2ebd1</Color>
+    <Color x:Key="BackgroundColor">#E1E1E1</Color>
+    
 </ResourceDictionary>

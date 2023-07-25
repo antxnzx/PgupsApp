@@ -1,9 +1,14 @@
-﻿namespace PgupsApp;
+﻿using PgupsApp.Views;
+
+namespace PgupsApp;
 
 public partial class AppShell : Shell
 {
 	public AppShell()
 	{
 		InitializeComponent();
+
+		Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+		Routing.RegisterRoute(nameof(GamePage), typeof(GamePage));
 	}
 }
