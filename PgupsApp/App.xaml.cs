@@ -1,15 +1,20 @@
 ﻿using PgupsApp.Models;
+using PgupsApp.Repositories;
+using System.Reflection;
 
 namespace PgupsApp;
 
 public partial class App : Application
 {
 	public static UserBasicInfo UserDetails;
-	public App()
+	public static TestRepository TestRepository {  get; private set; }
+	public App(TestRepository repo)
 	{
 		InitializeComponent();
 
 		MainPage = new AppShell();
+
+		TestRepository = repo;
 
 		Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler, view) =>
 		{
@@ -20,5 +25,15 @@ public partial class App : Application
 			handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
 #endif
 		});
+
+		var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
+		using (Stream stream = assembly.GetManifestResourceStream("PgupsApp.Resources.DataBases.tests.db"))
+		{
+			using (MemoryStream memoryStream = new MemoryStream())
+			{
+				stream.CopyTo(memoryStream);
+				File.WriteAllBytes(TestRepository.DbPath, memoryStream.ToArray());
+			}
+		}
 	}
 }

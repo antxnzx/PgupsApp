@@ -25,16 +25,15 @@
         </Grid.ColumnDefinitions>
 
         <VerticalStackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
-            <Button Text="Тесты" 
+            <Button Text="Тесты"
                     TextColor="Black" 
                     ImageSource="{x:Static models:Icons.Dictionary500}"
                     BackgroundColor="{StaticResource BackgroundColor}" 
-                    ContentLayout="Top, 1"
+                    ContentLayout="Top,0"
                     WidthRequest="95"
-                    HeightRequest="90"/>
-            <!--<ImageButton  Source="{x:Static models:Icons.Dictionary500}" 
-                          Style="{StaticResource MenuIcons}"/>
-            <Label Text="Тесты" HorizontalOptions="Center" FontAttributes="Bold"/>-->
+                    HeightRequest="90"
+                    Command="{Binding}"/>
+          
 
         </VerticalStackLayout>
 
@@ -51,7 +50,7 @@
                     ImageSource="{x:Static models:Icons.NumberGame500}"
                     BackgroundColor="{StaticResource BackgroundColor}" 
                     Command="{Binding GoToGamePageCommand}"
-                    ContentLayout="Top, 1"
+                    ContentLayout="Top,0"
                     WidthRequest="95"
                     HeightRequest="90"/>
             <!--<ImageButton  Source="{x:Static models:Icons.NumberGame500}"
