@@ -32,7 +32,7 @@
                     ContentLayout="Top,0"
                     WidthRequest="95"
                     HeightRequest="90"
-                    Command="{Binding}"/>
+                    Command="{Binding GoToTestPageCommand}"/>
           
 
         </VerticalStackLayout>

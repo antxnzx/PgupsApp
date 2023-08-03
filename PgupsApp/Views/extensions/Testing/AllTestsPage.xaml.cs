@@ -12,4 +12,9 @@ public partial class AllTestsPage : ContentPage
 		InitializeComponent();
 		
 	}
+
+    private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+    {
+		testList.SelectedItem = null;
+    }
 }

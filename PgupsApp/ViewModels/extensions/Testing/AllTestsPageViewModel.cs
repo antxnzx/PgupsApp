@@ -1,29 +1,49 @@
 ﻿using PgupsApp.Models;
-using PgupsApp.Repositories;
-using System;
-using System.Collections.Generic;
+
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace PgupsApp.ViewModels.extensions.Testing
 {
-    internal class AllTestsPageViewModel : IQueryAttributable
+    internal partial class AllTestsPageViewModel : BaseViewModel, IQueryAttributable
     {
-        public TestRepository TestRepository = new TestRepository();
-        public ObservableCollection<SingleTestViewModel> AllTests { get; set; }
 
+        [ObservableProperty]
+        private List<Test> testsInfo = new();
 
-        public AllTestsPageViewModel() 
+        
+
+        public AllTestsPageViewModel()
         {
-           AllTests = new ObservableCollection<SingleTestViewModel>(((IEnumerable<Test>)TestRepository.GetAllTests()).Select(t => new SingleTestViewModel(t))); 
+            LoadData();
+
         }
+
         public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
-            throw new NotImplementedException();
+
         }
 
+        public async void LoadData()
+        {
+            TestsInfo = await App.TestRepository.GetAllTests();
+            //foreach (Test test in tests)
+            //{
+            //    var vm = new SingleTestViewModel(test);
+            //    AllTests.Add(vm);
+            //}
+        }
+        [RelayCommand]
+        public async Task GoToTest(Test test) 
+        {
+            if (test != null)
+            {
+                await Shell.Current.GoToAsync($"{nameof(Views.extensions.Testing.SingleTest)}?load={test.Id}");
+                
+            }
+        }
 
     }
 }

@@ -25,15 +25,8 @@ public partial class App : Application
 			handler.PlatformView.BorderStyle = UIKit.UITextBorderStyle.None;
 #endif
 		});
-
-		var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
-		using (Stream stream = assembly.GetManifestResourceStream("PgupsApp.Resources.DataBases.tests.db"))
-		{
-			using (MemoryStream memoryStream = new MemoryStream())
-			{
-				stream.CopyTo(memoryStream);
-				File.WriteAllBytes(TestRepository.DbPath, memoryStream.ToArray());
-			}
-		}
+		
+			
+		
 	}
 }

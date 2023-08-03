@@ -15,21 +15,18 @@ namespace PgupsApp.Repositories
 
         private SQLiteAsyncConnection connection;
 
-        public static string DbPath { get; } = System.IO.Path.Combine(FileSystem.AppDataDirectory, "tests.db3");
-        public TestRepository()
+        public TestRepository(string db)
         {
-            _dbPath = DbPath;
+            _dbPath = db;
         }
 
-        private async Task Init()
+        private void Init()
         {
             if (connection != null)
                 return;
 
             connection = new SQLiteAsyncConnection(_dbPath);
-            await connection.CreateTableAsync<Test>();
-            await connection.CreateTableAsync<Question>();
-            await connection.CreateTableAsync<Answer>();
+
 
         }
 
@@ -37,7 +34,7 @@ namespace PgupsApp.Repositories
         {
             try
             {
-                await Init();
+                 Init();
                 return await connection.Table<Test>().ToListAsync() ;
             }
             catch (Exception ex)
@@ -52,7 +49,7 @@ namespace PgupsApp.Repositories
         {
             try
             {
-                await Init();
+                Init();
                 return await connection.Table<Question>().Where(quest => quest.TestId == testId).ToListAsync();
             }
             catch (Exception ex)
@@ -67,7 +64,7 @@ namespace PgupsApp.Repositories
         {
             try
             {
-                await Init();
+                Init();
                 return await connection.Table<Answer>().Where(ans => (ans.QuestionId == questionId) && (ans.TestId == testId)).ToListAsync();
             }
             catch (Exception ex)

@@ -3,21 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.extensions.Testing.AllTestsPage"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels.extensions.Testing"
-             Title="AllTestsPage">
+             Title="Тесты"
+             NavigatedTo="ContentPage_NavigatedTo"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Shell.BackgroundColor="{StaticResource MainColor}">
     <ContentPage.BindingContext>
         <viewModels:AllTestsPageViewModel/>
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <CollectionView x:Name="questionList" ItemsSource="{Binding AllTests}">
+    <ScrollView>
+        <CollectionView x:Name="testList" ItemsSource="{Binding TestsInfo}"
+                        SelectionMode="Single"
+                        
+                        SelectionChangedCommand="{Binding GoToTestCommand}"
+                        SelectionChangedCommandParameter="{Binding Source={RelativeSource Self}, Path=SelectedItem}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Vertical">
-
-                        <Label Text="{Binding Test.Id}" />
-                        <Label Text="{Binding Test.Name}" />
-                    </StackLayout>
+                    
+                    <Grid Style="{StaticResource Test}" Margin="5, 5, 5, 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                        </Grid.RowDefinitions>
+                        <BoxView Grid.ColumnSpan="2" Grid.Column="0" 
+                                 Color="{StaticResource White}" 
+                                 CornerRadius="15"/>
+                        <Label VerticalOptions="Center" 
+                               HorizontalOptions="Center"
+                               Grid.Column="0" FontSize="Subtitle" Text="{Binding Id}" />
+                        <Label VerticalOptions="Center" 
+                               HorizontalOptions="Center"
+                               Grid.Column="1" FontSize="Subtitle" Text="{Binding Name}" 
+                               Margin="0, 0, 2,0"/>
+                        </Grid>
+                    
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

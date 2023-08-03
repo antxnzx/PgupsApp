@@ -54,7 +54,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\DataBases\tests.db" />
+	  <None Remove="Resources\Raw\DataBases\tests.db" />
 	  <None Remove="Resources\Icons\personicon300.svg" />
 	</ItemGroup>
 
@@ -114,7 +114,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Resources\DataBases\tests.db">
+	  <Resource Include="Resources\Raw\DataBases\tests.db">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Resource>
 	</ItemGroup>

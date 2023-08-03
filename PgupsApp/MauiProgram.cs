@@ -31,6 +31,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<GamePage>();
 		builder.Services.AddSingleton<ServicesPage>();
 		builder.Services.AddSingleton<AllTestsPage>();
+		builder.Services.AddTransient<SingleTest>();
 
 		//viewModels
 		builder.Services.AddSingleton<LoginPageViewModel>();
@@ -39,11 +40,23 @@ public static class MauiProgram
 		builder.Services.AddSingleton<GamePage>();
 		builder.Services.AddSingleton<ServicesPageViewModel>();
 		builder.Services.AddSingleton<AllTestsPageViewModel>();
+		builder.Services.AddSingleton<SingleTestViewModel>();
 
         //databases
-        string dbPath = TestRepository.DbPath;
-        builder.Services.AddSingleton<TestRepository>(s => ActivatorUtilities.CreateInstance<TestRepository>(s, dbPath));
-
+        builder.Services.AddTransient<TestRepository>((services) =>
+        {
+            var filenameDb = Path.Combine(FileSystem.AppDataDirectory, "apptests.db3");
+            if (!File.Exists(filenameDb))
+            {
+                using var stream = FileSystem.OpenAppPackageFileAsync("DataBases/tests.db").GetAwaiter().GetResult();
+                using (var memoryStream = new MemoryStream())
+                {
+                    stream.CopyTo(memoryStream);
+                    File.WriteAllBytes(filenameDb, memoryStream.ToArray());
+                }
+            }
+            return new TestRepository(filenameDb);
+        });
 
         return builder.Build();
 	}

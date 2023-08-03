@@ -7,10 +7,11 @@ namespace PgupsApp.ViewModels
     public partial class ServicesPageViewModel : BaseViewModel
     {
         [RelayCommand]
-        async void GoToGamePage()
+        async Task GoToGamePage()
         {
             await Shell.Current.GoToAsync($"{nameof(GamePage)}");
         }
+
         [RelayCommand]
         async Task GoToTestPage()
         {
