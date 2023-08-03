@@ -11,11 +11,11 @@
     </ContentPage.BindingContext>
     
     
-    <Grid>
+    <Grid Padding="0,5,0,5" RowSpacing="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -24,55 +24,105 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <VerticalStackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
-            <Button Text="Тесты"
-                    TextColor="Black" 
-                    ImageSource="{x:Static models:Icons.Dictionary500}"
-                    BackgroundColor="{StaticResource BackgroundColor}" 
-                    ContentLayout="Top,0"
-                    WidthRequest="95"
-                    HeightRequest="90"
-                    Command="{Binding GoToTestPageCommand}"/>
-          
+        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+               WidthRequest="100"
+               HeightRequest="100"
+               Grid.Column="0" Grid.Row="0"
+               Margin="0"
+               Padding="0">
+            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
 
-        </VerticalStackLayout>
+                <Button TextColor="Black" 
+                        ImageSource="{x:Static models:Icons.Dictionary500}" 
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        WidthRequest="100"
+                        HeightRequest="45"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        Command="{Binding GoToTestPageCommand}"/>
+                <Label Text="Тесты" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+               WidthRequest="100"
+               HeightRequest="100"
+               Grid.Column="1" Grid.Row="0"
+               Margin="0"
+               Padding="0">
+            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
 
-        <VerticalStackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
-            <ImageButton  Source="{x:Static models:Icons.Library500}"
-                          Style="{StaticResource MenuIcons}"/>
-            <Label Text="Словарь" HorizontalOptions="Center" FontAttributes="Bold"/>
-            
-        </VerticalStackLayout>
+                <Button TextColor="Black" 
+                        ImageSource="{x:Static models:Icons.Library500}" 
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        WidthRequest="100"
+                        HeightRequest="45"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        />
+                <Label Text="Словари" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
 
-        <VerticalStackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center">
-            <Button Text="Игра" 
-                    TextColor="Black" 
-                    ImageSource="{x:Static models:Icons.NumberGame500}"
-                    BackgroundColor="{StaticResource BackgroundColor}" 
-                    Command="{Binding GoToGamePageCommand}"
-                    ContentLayout="Top,0"
-                    WidthRequest="95"
-                    HeightRequest="90"/>
-            <!--<ImageButton  Source="{x:Static models:Icons.NumberGame500}"
-                          Style="{StaticResource MenuIcons}"
-                          "/>
-            <Label Text="Игра" HorizontalOptions="Center" FontAttributes="Bold"/>-->
-            
-        </VerticalStackLayout>
+        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+               WidthRequest="100"
+               HeightRequest="100"
+               Grid.Column="2" Grid.Row="0"
+               Margin="0"
+               Padding="0">
+            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
 
-        <VerticalStackLayout Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
-            <ImageButton  Source="{x:Static models:Icons.Tasks500}"
-                          Style="{StaticResource MenuIcons}"/>
-            <Label Text="Кейсы" HorizontalOptions="Center" FontAttributes="Bold"/>
-            
-        </VerticalStackLayout>
+                <Button TextColor="Black" 
+                        ImageSource="{x:Static models:Icons.NumberGame500}" 
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        WidthRequest="100"
+                        HeightRequest="45"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        Command="{Binding GoToGamePageCommand}"/>
+                <Label Text="Игра" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
 
-        <VerticalStackLayout Grid.Column="1" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center">
-            <ImageButton  Source="{x:Static models:Icons.Test500}"
-                          Style="{StaticResource MenuIcons}"/>
-            <Label Text="Обучение" HorizontalOptions="Center" FontAttributes="Bold"/>
-            
-        </VerticalStackLayout>
+        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+               WidthRequest="100"
+               HeightRequest="100"
+               Grid.Column="0" Grid.Row="1"
+               Margin="0"
+               Padding="0">
+            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+
+                <Button TextColor="Black" 
+                        ImageSource="{x:Static models:Icons.Tasks500}" 
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        WidthRequest="100"
+                        HeightRequest="45"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        />
+                <Label Text="Кейсы" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+               WidthRequest="100"
+               HeightRequest="100"
+               Grid.Column="1" Grid.Row="1"
+               Margin="0"
+               Padding="0">
+            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+
+                <Button TextColor="Black" 
+                        ImageSource="{x:Static models:Icons.Test500}" 
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        WidthRequest="100"
+                        HeightRequest="45"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center"
+                        />
+                <Label Text="Обучение" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+
 
     </Grid>
 </ContentPage>
