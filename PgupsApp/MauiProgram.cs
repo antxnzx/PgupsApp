@@ -5,6 +5,7 @@ using PgupsApp.ViewModels;
 using PgupsApp.ViewModels.extensions.Testing;
 using PgupsApp.Views;
 using PgupsApp.Views.extensions.Testing;
+using System.Reflection;
 
 namespace PgupsApp;
 
@@ -45,10 +46,12 @@ public static class MauiProgram
         //databases
         builder.Services.AddTransient<TestRepository>((services) =>
         {
-            var filenameDb = Path.Combine(FileSystem.AppDataDirectory, "apptests.db3");
-            if (!File.Exists(filenameDb))
-            {
-                using var stream = FileSystem.OpenAppPackageFileAsync("DataBases/tests.db").GetAwaiter().GetResult();
+            var filenameDb = Path.Combine(FileSystem.AppDataDirectory, "apptests.db");
+			if (!File.Exists(filenameDb))
+			{
+				//var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly; 
+				//using var stream = assembly.GetManifestResourceStream("PgupsApp.Resources.DataBases.tests.db");
+				using var stream = FileSystem.OpenAppPackageFileAsync("tests.db").GetAwaiter().GetResult();
                 using (var memoryStream = new MemoryStream())
                 {
                     stream.CopyTo(memoryStream);

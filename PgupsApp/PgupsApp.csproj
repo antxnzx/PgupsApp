@@ -32,6 +32,7 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
 	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	  <RunAOTCompilation>False</RunAOTCompilation>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -114,9 +115,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Resources\Raw\DataBases\tests.db">
+	  <MauiAsset Update="Resources\Raw\tests.db">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Resource>
+	  </MauiAsset>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Resources\Raw\DataBases\" />
 	</ItemGroup>
 
 </Project>
