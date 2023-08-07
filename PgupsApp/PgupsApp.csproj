@@ -77,6 +77,9 @@
 	  <MauiXaml Update="Resources\Styles\Styles исходный.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\extensions\Testing\ResultTestMikhelsonaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\extensions\Testing\SingleTest.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

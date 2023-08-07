@@ -12,53 +12,37 @@
     </ContentPage.BindingContext>
     <Grid  Padding="0,0,0,15">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="30*"/>
-           </Grid.RowDefinitions>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="55*"/>
+        </Grid.RowDefinitions>
         <Frame Grid.Row="0"
                CornerRadius="15"
                HorizontalOptions="Center"
                VerticalOptions="Center">
             <Label  FontSize="17" FontAttributes="Bold" Text="{Binding CurrentQuestion.QuestionText}"/>
         </Frame>
-        <Frame Grid.Row="1"
-               CornerRadius="15"
-               HorizontalOptions="Center"
-               VerticalOptions="Center">
-            <CollectionView  x:Name="answers" ItemsSource="{Binding VarAnswers}"
-                        SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-
-                        <StackLayout Orientation="Vertical" Padding="3">
-                            <Label  Text="{Binding AnswerText}" />
-                            <BoxView HeightRequest="2"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Frame>
-        <VerticalStackLayout Spacing="2" Grid.Row="2">
-            <Button Text="Вариант 1" Style="{StaticResource TestButtons}"
-                    Command="{Binding AnswerTheQuestionCommand}"
-                    CommandParameter="1"/>
-            <Button Text="Вариант 2" 
+        
+        <VerticalStackLayout Spacing="2" Grid.Row="1">
+            <Button Text="{Binding VarAnswers[0].AnswerText}"
                     Style="{StaticResource TestButtons}"
                     Command="{Binding AnswerTheQuestionCommand}"
-                    CommandParameter="2"/>
-            <Button Text="Вариант 3" 
+                    CommandParameter="{Binding VarAnswers[0]}"/>
+            <Button Text="{Binding VarAnswers[1].AnswerText}" 
                     Style="{StaticResource TestButtons}"
                     Command="{Binding AnswerTheQuestionCommand}"
-                    CommandParameter="3"/>
-            <Button Text="Вариант 4" 
+                    CommandParameter="{Binding VarAnswers[1]}"/>
+            <Button Text="{Binding VarAnswers[2].AnswerText}" 
                     Style="{StaticResource TestButtons}"
                     Command="{Binding AnswerTheQuestionCommand}"
-                    CommandParameter="4"/>
-            <Button Text="Вариант 5" 
+                    CommandParameter="{Binding VarAnswers[2]}"/>
+            <Button Text="{Binding VarAnswers[3].AnswerText}" 
                     Style="{StaticResource TestButtons}"
                     Command="{Binding AnswerTheQuestionCommand}"
-                    CommandParameter="5"/>
+                    CommandParameter="{Binding VarAnswers[3]}"/>
+            <Button Text="{Binding VarAnswers[4].AnswerText}" 
+                    Style="{StaticResource TestButtons}"
+                    Command="{Binding AnswerTheQuestionCommand}"
+                    CommandParameter="{Binding VarAnswers[4]}"/>
         </VerticalStackLayout>
         
     </Grid>

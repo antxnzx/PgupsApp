@@ -16,6 +16,7 @@ namespace PgupsApp.Models
         public string AnswerText { get; set; }
         public int QuestionId { get; set; }
         public int TestId { get; set; }
+        public int KeyForTrueAnswer { get; set; }
 
     }
 }

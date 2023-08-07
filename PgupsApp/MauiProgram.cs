@@ -32,7 +32,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<GamePage>();
 		builder.Services.AddSingleton<ServicesPage>();
 		builder.Services.AddSingleton<AllTestsPage>();
-		builder.Services.AddTransient<SingleTest>();
+		builder.Services.AddSingleton<SingleTest>();
+		builder.Services.AddSingleton<ResultTestMikhelsonaPage>();
 
 		//viewModels
 		builder.Services.AddSingleton<LoginPageViewModel>();
@@ -42,6 +43,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<ServicesPageViewModel>();
 		builder.Services.AddSingleton<AllTestsPageViewModel>();
 		builder.Services.AddSingleton<SingleTestViewModel>();
+		builder.Services.AddSingleton<ResultTestMikhelsonaViewModel>();
 
         //databases
         builder.Services.AddTransient<TestRepository>((services) =>
@@ -49,8 +51,7 @@ public static class MauiProgram
             var filenameDb = Path.Combine(FileSystem.AppDataDirectory, "apptests.db");
 			if (!File.Exists(filenameDb))
 			{
-				//var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly; 
-				//using var stream = assembly.GetManifestResourceStream("PgupsApp.Resources.DataBases.tests.db");
+				
 				using var stream = FileSystem.OpenAppPackageFileAsync("tests.db").GetAwaiter().GetResult();
                 using (var memoryStream = new MemoryStream())
                 {
