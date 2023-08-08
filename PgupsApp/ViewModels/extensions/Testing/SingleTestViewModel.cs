@@ -64,8 +64,8 @@ namespace PgupsApp.ViewModels.extensions.Testing
             userAnswers.Add(answer);
             if (_questionNumber == questions.Count - 1)
             {
-                analysis.CheckAnswers(userAnswers);
-                int[] answers = new int[3] { analysis.Zavis, analysis.Competent, analysis.Agressive };
+                
+                string answers = analysis.CheckAnswers(userAnswers);
                 await Shell.Current.GoToAsync($"{nameof(Views.extensions.Testing.ResultTestMikhelsonaPage)}?result={answers}");
                 return;
             }

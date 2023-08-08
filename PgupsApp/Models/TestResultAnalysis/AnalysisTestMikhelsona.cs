@@ -5,15 +5,20 @@ namespace PgupsApp.Models.TestResultAnalysis
     public class AnalysisTestMikhelsona
     {
        
-        public int Zavis;
-        public int Competent;
-        public int Agressive;
-        public void CheckAnswers(List<Answer> userAnswers)
+        
+        public string CheckAnswers(List<Answer> userAnswers)
         {
-            int percent = userAnswers.Count * 100;
-            Zavis = userAnswers.Where(a => a.KeyForTrueAnswer == 1).Count();
-            Competent = userAnswers.Where(a => a.KeyForTrueAnswer == 2).Count();
-            Agressive = userAnswers.Where(a => a.KeyForTrueAnswer == 3).Count();
+            return GetPercentOfAnswers(userAnswers, 1) + GetPercentOfAnswers(userAnswers, 2) +
+                GetPercentOfAnswers(userAnswers, 3);
+        }
+
+        private string GetPercentOfAnswers(List<Answer> userAnswers, int f)
+        {
+            int amountOfCorrect = userAnswers.Where(a => a.KeyForTrueAnswer == f).Count();
+            int amountOfAll = userAnswers.Count();
+            float percent = (amountOfCorrect * 100 / amountOfAll);
+
+            return Math.Round(percent).ToString();
         }
     }
 }

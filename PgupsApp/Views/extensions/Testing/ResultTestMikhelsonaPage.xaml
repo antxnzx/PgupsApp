@@ -6,31 +6,52 @@
              Title="Результат теста"
              Shell.BackgroundColor="{StaticResource MainColor}"
              BackgroundColor="{StaticResource BackgroundColor}"
-             Shell.TabBarIsVisible="False">
+             Shell.TabBarIsVisible="False"
+            >
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
     <ContentPage.BindingContext>
         <viewModels:ResultTestMikhelsonaViewModel/>
     </ContentPage.BindingContext>
-    <Grid>
+    <Grid RowSpacing="7">
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="1" Grid.Column="0" BackgroundColor="White"/>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="2" Grid.Column="0" BackgroundColor="White"/>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="3" Grid.Column="0" BackgroundColor="White"/>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="4" Grid.Column="0" BackgroundColor="White"/>
+        
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Text="Зависимая позиция в общении (неуверенное поведение)" LineBreakMode="WordWrap"/>
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Text="{Binding PercentZavis}"/>
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="2" Text="{Binding GradeZavis}"/>
 
-        <HorizontalStackLayout Grid.Row="1">
-            <Label Text="Зависимый тип"/>
-            <Label Text="{Binding PercentZavis}"/>
-        </HorizontalStackLayout> 
-        <HorizontalStackLayout Grid.Row="2">
-            <Label Text="Компетентный тип"/>
-            <Label Text="{Binding PercentCompetent}"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Grid.Row="3">
-            <Label Text="Агрессивный тип"/>
-            <Label Text="{Binding PercentAgressive}"/>
-        </HorizontalStackLayout>
+
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" Text="Компетентная позиция в общении (уверенное поведение)" LineBreakMode="WordWrap"/>
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="2" Grid.Column="1" Text="{Binding PercentCompetent}"/>
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="2" Grid.Column="2" Text="{Binding GradeCompetent}"/>
+
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" Text="Агрессивная позиция в общении (давящее поведение)" LineBreakMode="WordWrap"/>
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Text="{Binding PercentAgressive}"/>
+        <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Text="{Binding GradeAgressive}"/>
+        
+        <Label Margin="10" VerticalOptions="Center" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="0" 
+               Text="Коммуникативная компетентность - это умение выйти из любой ситуации, не потеряв ни грамма собственной внутренней свободы и в то же время не дав потерять её партнеру по общению. Исходя из этого определения, можно говорить о трех позициях в общении: зависимой, компетентной и агрессивной. В первом случае (зависимая позиция) наблюдается неуверенное поведение, при котором человек теряет внутреннюю свободу; в случае с агрессивной позицией – человек «подавляет» партнера по общению, при этом партнер теряет внутреннюю свободу; компетентная позиция – самая оптимальная, это общение на равных, это и будет та самая коммуникативная компетентность."/>
+        <Button Grid.ColumnSpan="3" Grid.Row="5" Grid.Column="0"  
+                HeightRequest="40" WidthRequest="200"
+                Text="Выйти из теста"
+                Style="{StaticResource TestButtons}"
+                Command="{Binding ExitFromTestCommand}"/>
     </Grid>
 </ContentPage>
