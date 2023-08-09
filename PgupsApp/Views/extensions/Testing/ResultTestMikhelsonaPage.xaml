@@ -20,8 +20,8 @@
             <RowDefinition Height="12*"/>
             <RowDefinition Height="12*"/>
             <RowDefinition Height="12*"/>
-            <RowDefinition Height="45*"/>
-            <RowDefinition Height="19*"/>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="16*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
@@ -45,9 +45,16 @@
         <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" Text="Агрессивная позиция в общении (давящее поведение)" LineBreakMode="WordWrap"/>
         <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Text="{Binding PercentAgressive}"/>
         <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Text="{Binding GradeAgressive}"/>
+
+        <VerticalStackLayout Margin="10" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="0">
+            <Label VerticalOptions="Center"  
+               Text="Коммуникативная компетентность - это умение выйти из любой ситуации, не потеряв ни грамма собственной внутренней свободы и в то же время не дав потерять её партнеру по общению. 
+               Исходя из этого определения, можно говорить о трех позициях в общении: зависимой, компетентной и агрессивной."/>
+            <Label VerticalOptions="Center" Margin="0,5,0,0" Text="В первом случае (зависимая позиция) наблюдается неуверенное поведение, при котором человек теряет внутреннюю свободу;"/>
+            <Label VerticalOptions="Center" Margin="0,5,0,0" Text="В случае с агрессивной позицией – человек «подавляет» партнера по общению, при этом партнер теряет внутреннюю свободу;"/>
+            <Label VerticalOptions="Center" Margin="0,5,0,0" Text="Компетентная позиция – самая оптимальная, это общение на равных, это и будет та самая коммуникативная компетентность."/>
+        </VerticalStackLayout>
         
-        <Label Margin="10" VerticalOptions="Center" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="0" 
-               Text="Коммуникативная компетентность - это умение выйти из любой ситуации, не потеряв ни грамма собственной внутренней свободы и в то же время не дав потерять её партнеру по общению. Исходя из этого определения, можно говорить о трех позициях в общении: зависимой, компетентной и агрессивной. В первом случае (зависимая позиция) наблюдается неуверенное поведение, при котором человек теряет внутреннюю свободу; в случае с агрессивной позицией – человек «подавляет» партнера по общению, при этом партнер теряет внутреннюю свободу; компетентная позиция – самая оптимальная, это общение на равных, это и будет та самая коммуникативная компетентность."/>
         <Button Grid.ColumnSpan="3" Grid.Row="5" Grid.Column="0"  
                 HeightRequest="40" WidthRequest="200"
                 Text="Выйти из теста"

@@ -8,7 +8,8 @@ using PgupsApp.Views;
 namespace PgupsApp.ViewModels.extensions.Testing
 {
     internal partial class ResultTestMikhelsonaViewModel : BaseViewModel, IQueryAttributable
-    { 
+    {
+        private AnalysisTestMikhelsona analysis = new();
         private string userAnswers;
 
         [ObservableProperty]
@@ -37,10 +38,14 @@ namespace PgupsApp.ViewModels.extensions.Testing
         {
             if (query.ContainsKey("result"))
             {
-                userAnswers = query["result"].ToString();
+                
+                string answers = query["result"].ToString();
+                
 
 
+                userAnswers = analysis.CheckAnswers(answers);
                 CalculatePercentAndGrade();
+                
             }
         }
 

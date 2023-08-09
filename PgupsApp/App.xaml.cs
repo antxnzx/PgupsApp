@@ -7,7 +7,8 @@ namespace PgupsApp;
 public partial class App : Application
 {
 	public static UserBasicInfo UserDetails;
-	public static TestRepository TestRepository {  get; private set; }
+ 
+    public static TestRepository TestRepository {  get; private set; }
 	public App(TestRepository repo)
 	{
 		InitializeComponent();

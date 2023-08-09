@@ -84,7 +84,7 @@
                                    Margin="0"
                            />
                             </Frame>
-                            <Entry Text="{Binding Email}"
+                            <Entry Text="{Binding EmailLog}"
                                Placeholder="Имя пользователя"
                                TextColor="Black"
                                FontAttributes="Bold"

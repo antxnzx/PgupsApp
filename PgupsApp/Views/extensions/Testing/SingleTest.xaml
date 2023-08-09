@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.extensions.Testing.SingleTest"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels.extensions.Testing"
-             Title="{Binding CurrentQuestion.Id}"
+             Title="{Binding CurrentNumber}"
              Shell.BackgroundColor="{StaticResource MainColor}"
              BackgroundColor="{StaticResource BackgroundColor}"
              Shell.TabBarIsVisible="False">

@@ -34,7 +34,7 @@
                                HorizontalOptions="Center"
                                Grid.Column="0" FontSize="Subtitle" Text="{Binding Id}" />
                         <Label VerticalOptions="Center" 
-                               HorizontalOptions="Center"
+                               HorizontalOptions="Start"
                                Grid.Column="1" FontSize="Subtitle" Text="{Binding Name}" 
                                Margin="0, 0, 2,0"/>
                         </Grid>

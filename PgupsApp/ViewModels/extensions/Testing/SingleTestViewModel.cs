@@ -21,14 +21,15 @@ namespace PgupsApp.ViewModels.extensions.Testing
         [ObservableProperty]
         private List<Answer> varAnswers = new();
 
-        private AnalysisTestMikhelsona analysis = new();
+        [ObservableProperty]
+        private int currentNumber;
         
         private int _questionNumber;
 
 
         private List<Question> questions = new();
     
-        public List<Answer> userAnswers = new();
+        public string userAnswers;
         public int TestId { get; set; }
 
         //public SingleTestViewModel(Test t) 
@@ -47,6 +48,7 @@ namespace PgupsApp.ViewModels.extensions.Testing
                 TestId = Convert.ToInt32(query["load"]);
                 questions = await App.TestRepository.GetAllQuestions(TestId);
                 _questionNumber = 0;
+                CurrentNumber = _questionNumber + 1;
                 await GetAnswers();
 
             }
@@ -55,23 +57,23 @@ namespace PgupsApp.ViewModels.extensions.Testing
         private async Task GetAnswers()
         {
             CurrentQuestion = questions[_questionNumber];
-            VarAnswers = await App.TestRepository.GetAnswersForCurrent(TestId, CurrentQuestion.Id);
+            VarAnswers = await App.TestRepository.GetAnswersForCurrent(TestId, CurrentNumber);
         }
 
         [RelayCommand]
         public async Task AnswerTheQuestion(Answer answer)
         {
-            userAnswers.Add(answer);
+            userAnswers = userAnswers + answer.KeyForTrueAnswer;
             if (_questionNumber == questions.Count - 1)
             {
                 
-                string answers = analysis.CheckAnswers(userAnswers);
-                await Shell.Current.GoToAsync($"{nameof(Views.extensions.Testing.ResultTestMikhelsonaPage)}?result={answers}");
+                await Shell.Current.GoToAsync($"{TestResultRedirect.RoutesToResult[TestId]}?result={userAnswers}");
                 return;
             }
             else
             {
                 _questionNumber++;
+                CurrentNumber = _questionNumber + 1;
                 await GetAnswers();
 
             }

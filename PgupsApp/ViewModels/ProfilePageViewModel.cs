@@ -23,7 +23,7 @@ namespace PgupsApp.ViewModels
         }
 
         [RelayCommand]
-        async void SignOut()
+        async Task SignOut()
         {
             if (Preferences.ContainsKey(nameof(App.UserDetails)))
             {

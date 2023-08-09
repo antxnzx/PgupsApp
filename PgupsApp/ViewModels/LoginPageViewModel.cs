@@ -3,28 +3,28 @@ using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
 using PgupsApp.Models;
 using PgupsApp.Views;
-using System.Text.Json.Serialization;
+
 
 namespace PgupsApp.ViewModels
 {
     public partial class LoginPageViewModel : BaseViewModel
     {
         [ObservableProperty]
-        private string _email;
+        private string emailLog;
         [ObservableProperty]
-        private string _password;
+        private string password;
 
         private bool _isUserDataAccepted;
 
         #region Commands
         [RelayCommand]
-        async void Login()
+        async Task Login()
         {
-            if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password) )
+            if (!string.IsNullOrWhiteSpace(EmailLog) && !string.IsNullOrWhiteSpace(Password) )
             {
                 
                 //calling api
-                if (Email == "said@gmail.com" && Password == "qwer123")
+                if (EmailLog == "said@gmail.com" && Password == "qwer123")
                 {
                     _isUserDataAccepted = true;
                 } 
@@ -41,7 +41,7 @@ namespace PgupsApp.ViewModels
                 {
                     var userDetails = new UserBasicInfo()
                     {
-                        Email = Email,
+                        Email = EmailLog,
                         Name = "Anton",
                         Surname = "Balmasov"
                     };
