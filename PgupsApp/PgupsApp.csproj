@@ -57,6 +57,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Raw\DataBases\tests.db" />
 	  <None Remove="Resources\Icons\personicon300.svg" />
+	  <None Remove="Resources\Raw\presetdata.db" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,6 +82,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\extensions\Testing\SingleTest.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\extensions\Testing\TestWithOneCorrectAnswerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LoadingPage.xaml">
@@ -118,7 +122,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiAsset Update="Resources\Raw\tests.db">
+	  <MauiAsset Update="Resources\Raw\presetdata.db">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
 	</ItemGroup>

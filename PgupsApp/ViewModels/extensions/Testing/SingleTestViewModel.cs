@@ -49,6 +49,7 @@ namespace PgupsApp.ViewModels.extensions.Testing
                 questions = await App.TestRepository.GetAllQuestions(TestId);
                 _questionNumber = 0;
                 CurrentNumber = _questionNumber + 1;
+                userAnswers = string.Empty;
                 await GetAnswers();
 
             }

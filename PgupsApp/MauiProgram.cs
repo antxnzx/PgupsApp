@@ -34,6 +34,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<AllTestsPage>();
 		builder.Services.AddSingleton<SingleTest>();
 		builder.Services.AddSingleton<ResultTestMikhelsonaPage>();
+		builder.Services.AddSingleton<TestWithOneCorrectAnswerPage>();
 
 		//viewModels
 		builder.Services.AddSingleton<LoginPageViewModel>();
@@ -42,8 +43,9 @@ public static class MauiProgram
 		builder.Services.AddSingleton<GamePage>();
 		builder.Services.AddSingleton<ServicesPageViewModel>();
 		builder.Services.AddSingleton<AllTestsPageViewModel>();
-		builder.Services.AddSingleton<SingleTestViewModel>();
+		builder.Services.AddTransient<SingleTestViewModel>();
 		builder.Services.AddSingleton<ResultTestMikhelsonaViewModel>();
+		builder.Services.AddSingleton<TestWithOneCorrectAnswerViewModel>();
 
         //databases
         builder.Services.AddTransient<TestRepository>((services) =>
@@ -52,7 +54,7 @@ public static class MauiProgram
 			if (!File.Exists(filenameDb))
 			{
 				
-				using var stream = FileSystem.OpenAppPackageFileAsync("tests.db").GetAwaiter().GetResult();
+				using var stream = FileSystem.OpenAppPackageFileAsync("presetdata.db").GetAwaiter().GetResult();
                 using (var memoryStream = new MemoryStream())
                 {
                     stream.CopyTo(memoryStream);
