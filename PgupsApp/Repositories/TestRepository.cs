@@ -74,5 +74,38 @@ namespace PgupsApp.Repositories
             }
             return new List<Answer>();
         }
+
+        public async Task<List<Dictionary>> GetAllDictionaries()
+        {
+            try
+            {
+                Init();
+                return await connection.Table<Dictionary>().ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+
+            return new List<Dictionary>();
+        }
+
+        public async Task<List<AbbreviationModel>> GetAllAbbreviations(string letter, int dictId)
+        {
+            try
+            {
+                Init();
+                var qwr = await connection.Table<AbbreviationModel>().Where(e => 
+                e.Abbreviation.TrimStart().StartsWith("А")).ToListAsync() ;
+                return qwr;
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+                return new List<AbbreviationModel>();
+        }
+
+        
     }
 }

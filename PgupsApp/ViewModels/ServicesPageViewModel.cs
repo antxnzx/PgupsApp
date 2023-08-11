@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using PgupsApp.Views;
+using PgupsApp.Views.extensions.Dictionaries;
 using PgupsApp.Views.extensions.Testing;
 
 namespace PgupsApp.ViewModels
@@ -16,6 +17,11 @@ namespace PgupsApp.ViewModels
         async Task GoToTestPage()
         {
             await Shell.Current.GoToAsync($"{nameof(AllTestsPage)}");
+        } 
+        [RelayCommand]
+        async Task GoToDictPage()
+        {
+            await Shell.Current.GoToAsync($"{nameof(AllDictionariesPage)}");
         }
     }
 }

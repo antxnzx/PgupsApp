@@ -78,6 +78,15 @@
 	  <MauiXaml Update="Resources\Styles\Styles исходный.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\extensions\Dictionaries\AllDictionariesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\extensions\Dictionaries\CurrentDictionaryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\extensions\Dictionaries\LetterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\extensions\Testing\ResultTestMikhelsonaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

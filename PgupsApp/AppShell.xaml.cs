@@ -1,5 +1,6 @@
 ﻿using PgupsApp.Views;
 using PgupsApp.Views.extensions.Testing;
+using PgupsApp.Views.extensions.Dictionaries;
 
 namespace PgupsApp;
 
@@ -15,5 +16,8 @@ public partial class AppShell : Shell
 		Routing.RegisterRoute(nameof(SingleTest), typeof(SingleTest));
         Routing.RegisterRoute(nameof(ResultTestMikhelsonaPage), typeof(ResultTestMikhelsonaPage));
 		Routing.RegisterRoute(nameof(TestWithOneCorrectAnswerPage), typeof(TestWithOneCorrectAnswerPage));
+		Routing.RegisterRoute(nameof(AllDictionariesPage), typeof(AllDictionariesPage));
+		Routing.RegisterRoute(nameof(CurrentDictionaryPage), typeof(CurrentDictionaryPage));
+		Routing.RegisterRoute(nameof(LetterPage), typeof(LetterPage));
     }
 }

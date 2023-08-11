@@ -58,6 +58,7 @@
                         HeightRequest="45"
                         VerticalOptions="End"
                         HorizontalOptions="Center"
+                        Command="{Binding GoToDictPageCommand}"
                         />
                 <Label Text="Словари" HorizontalOptions="Center"/>
             </VerticalStackLayout>

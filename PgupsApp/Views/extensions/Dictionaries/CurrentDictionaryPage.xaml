@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PgupsApp.Views.extensions.Dictionaries.CurrentDictionaryPage"
+             xmlns:viewModels="clr-namespace:PgupsApp.ViewModels.extensions.Dictionaries"
+             Title="{Binding Dict.Name}"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Shell.BackgroundColor="{StaticResource MainColor}">
+    <ContentPage.BindingContext>
+        <viewModels:CurrentDictionaryViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Text="A"
+                CommandParameter="A"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="0"
+                Grid.Column="0"/>
+        <Button Text="Б"
+                CommandParameter="Б"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="0"
+                Grid.Column="1"/>
+        <Button Text="В"
+                CommandParameter="В"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="0"
+                Grid.Column="2"/>
+        <Button Text="Г"
+                CommandParameter="Г"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="0"
+                Grid.Column="3"/>
+
+        <Button Text="Д"
+                CommandParameter="Д"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="1"
+                Grid.Column="0"/>
+        <Button Text="Е"
+                CommandParameter="Е"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="1"
+                Grid.Column="1"/>
+        <Button Text="Ж"
+                CommandParameter="Ж"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="1"
+                Grid.Column="2"/>
+        <Button Text="З"
+                CommandParameter="З"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="1"
+                Grid.Column="3"/>
+
+        <Button Text="И"
+                CommandParameter="И"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="2"
+                Grid.Column="0"/>
+        <Button Text="К"
+                CommandParameter="К"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="2"
+                Grid.Column="1"/>
+        <Button Text="Л"
+                CommandParameter="Л"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="2"
+                Grid.Column="2"/>
+        <Button Text="М"
+                CommandParameter="М"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="2"
+                Grid.Column="3"/>
+
+        <Button Text="Н"
+                CommandParameter="Н"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="3"
+                Grid.Column="0"/>
+        <Button Text="О"
+                CommandParameter="О"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="3"
+                Grid.Column="1"/>
+        <Button Text="П"
+                CommandParameter="П"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="3"
+                Grid.Column="2"/>
+        <Button Text="Р"
+                CommandParameter="Р"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="3"
+                Grid.Column="3"/>
+
+
+        <Button Text="С"
+                CommandParameter="С"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="4"
+                Grid.Column="0"/>
+        <Button Text="Т"
+                CommandParameter="Т"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="4"
+                Grid.Column="1"/>
+        <Button Text="У"
+                CommandParameter="У"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="4"
+                Grid.Column="2"/>
+        <Button Text="Ф"
+                CommandParameter="Ф"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="4"
+                Grid.Column="3"/>
+
+        <Button Text="Х"
+                CommandParameter="Х"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="5"
+                Grid.Column="0"/>
+        <Button Text="Ц"
+                CommandParameter="Ц"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="5"
+                Grid.Column="1"/>
+        <Button Text="Ч"
+                CommandParameter="Ч"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="5"
+                Grid.Column="2"/>
+        <Button Text="Ш"
+                CommandParameter="Ш"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="5"
+                Grid.Column="3"/>
+
+        <Button Text="Щ"
+                CommandParameter="Щ"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="6"
+                Grid.Column="0"/>
+        <Button Text="Э"
+                CommandParameter="Э"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="6"
+                Grid.Column="1"/>
+        <Button Text="Ю"
+                CommandParameter="Ю"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="6"
+                Grid.Column="2"/>
+        <Button Text="Я"
+                CommandParameter="Я"
+                Command="{Binding GoToLetterPageCommand}"
+                Grid.Row="6"
+                Grid.Column="3"/>
+
+    </Grid>
+</ContentPage>
