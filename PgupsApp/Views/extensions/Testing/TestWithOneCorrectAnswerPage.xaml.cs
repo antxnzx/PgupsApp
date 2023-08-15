@@ -6,4 +6,13 @@ public partial class TestWithOneCorrectAnswerPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+    {
+        OnBackButtonPressed();
+    }
+    protected override bool OnBackButtonPressed()
+    {
+        return true;
+    }
 }

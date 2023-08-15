@@ -55,7 +55,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Raw\DataBases\tests.db" />
 	  <None Remove="Resources\Icons\personicon300.svg" />
 	  <None Remove="Resources\Raw\presetdata.db" />
 	</ItemGroup>
@@ -134,10 +133,6 @@
 	  <MauiAsset Update="Resources\Raw\presetdata.db">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </MauiAsset>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Resources\Raw\DataBases\" />
 	</ItemGroup>
 
 </Project>

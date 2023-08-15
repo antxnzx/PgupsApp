@@ -90,20 +90,38 @@ namespace PgupsApp.Repositories
             return new List<Dictionary>();
         }
 
-        public async Task<List<AbbreviationModel>> GetAllAbbreviations(string letter, int dictId)
+        public async Task<List<AbbreviationModel>> GetAllAbbreviations(int letter, int dictId)
         {
             try
             {
                 Init();
+                string l = Alphabet.Dictionary[letter];
                 var qwr = await connection.Table<AbbreviationModel>().Where(e => 
-                e.Abbreviation.TrimStart().StartsWith("А")).ToListAsync() ;
+                (e.DictionaryId == dictId) && e.Abbreviation.StartsWith(l)).ToListAsync();
+
                 return qwr;
+                
             }
             catch (Exception ex)
             {
                 StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
             }
                 return new List<AbbreviationModel>();
+        }
+
+        public async Task<Dictionary> GetDictionary(int dictId)
+        {
+            try
+            {
+                Init();
+                return await connection.Table<Dictionary>().Where(e => e.Id == dictId).FirstOrDefaultAsync();
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
+            }
+
+            return new Dictionary();
         }
 
         

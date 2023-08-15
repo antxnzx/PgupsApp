@@ -24,17 +24,15 @@ namespace PgupsApp.ViewModels.extensions.Dictionaries
             await Shell.Current.GoToAsync($"{nameof(LetterPage)}?letter={letter}&dictId={dictId}");
         }
 
-        public void ApplyQueryAttributes(IDictionary<string, object> query)
+        public async void ApplyQueryAttributes(IDictionary<string, object> query)
         {
             if (query.ContainsKey("id"))
             {
 
                 dictId = Convert.ToInt32(query["id"].ToString());
 
-                if(query.ContainsKey("name"))
-                {
-                    Name = query["name"].ToString();
-                }
+                var dict = await App.TestRepository.GetDictionary(dictId);
+                Name = dict.Name;
 
             }
         }

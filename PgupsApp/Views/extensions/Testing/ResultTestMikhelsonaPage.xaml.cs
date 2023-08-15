@@ -11,4 +11,9 @@ public partial class ResultTestMikhelsonaPage : ContentPage
     {
         return true;
     }
+
+    private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+    {
+        OnBackButtonPressed();
+    }
 }

@@ -1,11 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using PgupsApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+
 
 namespace PgupsApp.ViewModels.extensions.Dictionaries
 {
@@ -14,6 +9,9 @@ namespace PgupsApp.ViewModels.extensions.Dictionaries
         [ObservableProperty]
         private List<AbbreviationModel> abbreviations = new();
 
+        [ObservableProperty]
+        private string letterName;
+
 
         public async void ApplyQueryAttributes(IDictionary<string, object> query)
         {
@@ -21,8 +19,9 @@ namespace PgupsApp.ViewModels.extensions.Dictionaries
             {
 
                 int dictId = Convert.ToInt32(query["dictId"].ToString());
+                int letter = Convert.ToInt32(query["letter"].ToString());
 
-                string letter = query["letter"].ToString();
+                LetterName = Alphabet.Dictionary[letter];
 
                 Abbreviations = await App.TestRepository.GetAllAbbreviations(letter, dictId);
                 

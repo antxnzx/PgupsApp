@@ -33,7 +33,7 @@ namespace PgupsApp.ViewModels.extensions.Dictionaries
         {
             if (dict != null)
             {
-                await Shell.Current.GoToAsync($"{nameof(Views.extensions.Dictionaries.CurrentDictionaryPage)}?id={dict.Id}&name={dict.Name}");
+                await Shell.Current.GoToAsync($"{nameof(Views.extensions.Dictionaries.CurrentDictionaryPage)}?id={dict.Id}");
             }
         }
     }

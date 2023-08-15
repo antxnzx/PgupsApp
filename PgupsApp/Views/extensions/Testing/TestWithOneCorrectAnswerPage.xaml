@@ -6,25 +6,64 @@
              Title="Результат теста"
              Shell.BackgroundColor="{StaticResource MainColor}"
              BackgroundColor="{StaticResource BackgroundColor}"
-             Shell.TabBarIsVisible="False">
+             Shell.TabBarIsVisible="False"
+             NavigatedTo="ContentPage_NavigatedTo">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
     </Shell.BackButtonBehavior>
     <ContentPage.BindingContext>
         <viewModels:TestWithOneCorrectAnswerViewModel/>
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.RowSpan="3" CornerRadius="15" Grid.Row="1" BackgroundColor="White"/>
+
+        <Label 
+            Text="Вы ответили правильно на"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Grid.Row="1"
+            FontSize="Title"/>
         <Label 
             Text="{Binding CorrectAnswers}"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label 
-            Text="{Binding AllQuestionsCount}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" 
+            Grid.Row="2"
+            FontSize="70"/>
+        <HorizontalStackLayout Grid.Row="3" HorizontalOptions="Center">
+            
+            <Label
+                Text="из "
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="Title"
+                />
+            <Label 
+                Text="{Binding AllQuestionsCount}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                FontSize="Title"
+                />
+            <Label
+                Text=" вопросов"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="Title"
+                />
+        </HorizontalStackLayout>
         <Button HeightRequest="40" WidthRequest="200"
                 Text="Выйти из теста"
                 Style="{StaticResource TestButtons}"
-                Command="{Binding ExitFromTestCommand}"/>
-    </VerticalStackLayout>
+                Command="{Binding ExitFromTestCommand}"
+                Grid.Row="5"/>
+    </Grid>
+
 </ContentPage>

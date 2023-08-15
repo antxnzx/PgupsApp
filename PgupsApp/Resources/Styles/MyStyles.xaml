@@ -62,6 +62,14 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
-    
+
+    <Style TargetType="Button" x:Key="AlphabetButtons">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="LineBreakMode" Value="WordWrap"/>
+        <Setter Property="FontSize" Value="Title"/>
+        <Setter Property="CornerRadius" Value="15"/>
+    </Style>
+
 
 </ResourceDictionary>

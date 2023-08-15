@@ -7,6 +7,7 @@
              Shell.BackgroundColor="{StaticResource MainColor}"
              BackgroundColor="{StaticResource BackgroundColor}"
              Shell.TabBarIsVisible="False"
+             NavigatedTo="ContentPage_NavigatedTo"
             >
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsEnabled="False" IsVisible="False"/>

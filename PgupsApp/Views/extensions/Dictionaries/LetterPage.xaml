@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.extensions.Dictionaries.LetterPage"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels.extensions.Dictionaries"
-             Title="Буква"
+             Title="{Binding LetterName}"
              BackgroundColor="{StaticResource BackgroundColor}"
              Shell.BackgroundColor="{StaticResource MainColor}">
     <ContentPage.BindingContext>
@@ -17,22 +17,28 @@
 
                     <Grid Style="{StaticResource Test}" Margin="5, 5, 5, 5">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="80"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="100*"
+                                           />
                         </Grid.RowDefinitions>
                         <BoxView Grid.ColumnSpan="2" Grid.Column="0" 
                                  Color="{StaticResource White}" 
                                  CornerRadius="15"/>
+      
+                            
                         <Label VerticalOptions="Center" 
                                HorizontalOptions="Center"
                                Grid.Column="0" FontSize="Subtitle" Text="{Binding Abbreviation}" />
+ 
                         <Label VerticalOptions="Center" 
                                HorizontalOptions="Start"
+                               LineBreakMode="WordWrap"
                                Grid.Column="1" FontSize="Subtitle" Text="{Binding Description}" 
-                               Margin="0, 0, 2,0"/>
+                               Margin="2, 3, 5, 3"
+                               />
                     </Grid>
 
                 </DataTemplate>
