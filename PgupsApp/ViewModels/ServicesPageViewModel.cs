@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using PgupsApp.Views;
 using PgupsApp.Views.extensions.Dictionaries;
+using PgupsApp.Views.extensions.Game;
 using PgupsApp.Views.extensions.Testing;
 
 namespace PgupsApp.ViewModels
@@ -10,7 +10,7 @@ namespace PgupsApp.ViewModels
         [RelayCommand]
         async Task GoToGamePage()
         {
-            await Shell.Current.GoToAsync($"{nameof(GamePage)}");
+            await Shell.Current.GoToAsync($"{nameof(GameMenu)}");
         }
 
         [RelayCommand]

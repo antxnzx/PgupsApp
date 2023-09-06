@@ -29,10 +29,10 @@
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
-        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="1" Grid.Column="0" BackgroundColor="White"/>
-        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="2" Grid.Column="0" BackgroundColor="White"/>
-        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="3" Grid.Column="0" BackgroundColor="White"/>
-        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="4" Grid.Column="0" BackgroundColor="White"/>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="1" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="3" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
+        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="4" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
         
         <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Text="Зависимая позиция в общении (неуверенное поведение)" LineBreakMode="WordWrap"/>
         <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Text="{Binding PercentZavis}"/>

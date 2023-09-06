@@ -23,10 +23,12 @@ namespace PgupsApp.ViewModels.extensions.Dictionaries
 
                 LetterName = Alphabet.Dictionary[letter];
 
+
                 Abbreviations = await App.TestRepository.GetAllAbbreviations(letter, dictId);
                 
 
             }
         }
+
     }
 }

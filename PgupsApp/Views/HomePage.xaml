@@ -4,7 +4,8 @@
              x:Class="PgupsApp.Views.HomePage"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
              Title="HomePage"
-             Shell.BackgroundColor="{StaticResource MainColor}">
+             Shell.BackgroundColor="{StaticResource MainColor}"
+             BackgroundColor="{StaticResource BackgroundColor}">
     <ContentPage.BindingContext>
         <viewModels:HomePageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>

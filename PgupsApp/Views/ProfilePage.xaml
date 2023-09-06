@@ -18,7 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="70" />
         </Grid.RowDefinitions>
-        <BoxView Color="White" 
+        <BoxView Color="{StaticResource ForegroundColor}" 
                  HeightRequest="220"
                  CornerRadius="0, 0, 10, 10"
                  Margin="0"
@@ -45,7 +45,7 @@
             </HorizontalStackLayout>
         </StackLayout>
 
-        <BoxView Color="White" 
+        <BoxView Color="{StaticResource ForegroundColor}" 
                  HeightRequest="70"
                  CornerRadius="10"
                  Margin="0"
@@ -61,7 +61,7 @@
                          ProgressColor="{StaticResource MainColor}" VerticalOptions="Center"/>
         </VerticalStackLayout>
 
-        <BoxView Color="White" 
+        <BoxView Color="{StaticResource ForegroundColor}" 
                  HeightRequest="70"
                  CornerRadius="10"
                  Margin="0"

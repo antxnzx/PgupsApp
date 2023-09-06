@@ -24,7 +24,7 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
 
-        <Frame Grid.RowSpan="3" CornerRadius="15" Grid.Row="1" BackgroundColor="White"/>
+        <Frame Grid.RowSpan="3" CornerRadius="15" Grid.Row="1" BackgroundColor="{StaticResource ForegroundColor}"/>
 
         <Label 
             Text="Вы ответили правильно на"

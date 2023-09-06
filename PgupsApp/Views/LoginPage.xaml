@@ -11,7 +11,7 @@
         <viewModels:LoginPageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>
     <ScrollView >
-        <Grid BackgroundColor="White">
+        <Grid BackgroundColor="{StaticResource ForegroundColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="220"/>
                 <RowDefinition Height="*"/>

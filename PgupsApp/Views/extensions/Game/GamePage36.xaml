@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PgupsApp.Views.extensions.Game.GamePage36"
+             xmlns:viewModels="clr-namespace:PgupsApp.ViewModels.extensions.Game"
+             Title="Игра"
+             Shell.NavBarIsVisible="True"
+             NavigationPage.HasNavigationBar="False"
+             Shell.TabBarIsVisible="False"
+             Shell.BackgroundColor="{StaticResource MainColor}"
+             BackgroundColor="{StaticResource ForegroundColor}">
+    <ContentPage.BindingContext>
+        <viewModels:NumberGameViewModel x:Name="ViewModel"/>
+    </ContentPage.BindingContext>
+    <Grid ColumnSpacing="2" RowSpacing="2" Padding="0,2,0,2">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource GameButtons}" 
+                Text="{Binding Buttons[0]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}" 
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource GameButtons}"
+                Text="{Binding Buttons[1]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="0" Grid.Column="2" 
+                Text="{Binding Buttons[2]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="0" Grid.Column="3" 
+                Text="{Binding Buttons[3]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="0" Grid.Column="4" 
+                Text="{Binding Buttons[4]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="0" Grid.Column="5" 
+                Text="{Binding Buttons[5]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+
+        <Button Grid.Row="1" Grid.Column="0" 
+                Text="{Binding Buttons[6]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="1" Grid.Column="1" 
+                Text="{Binding Buttons[7]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="1" Grid.Column="2" 
+                Text="{Binding Buttons[8]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="1" Grid.Column="3" 
+                Text="{Binding Buttons[9]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="1" Grid.Column="4" 
+                Text="{Binding Buttons[10]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="1" Grid.Column="5" 
+                Text="{Binding Buttons[11]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+
+
+        <Button Grid.Row="2" Grid.Column="0" 
+                Text="{Binding Buttons[12]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="2" Grid.Column="1" 
+                Text="{Binding Buttons[13]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="2" Grid.Column="2" 
+                Text="{Binding Buttons[14]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="2" Grid.Column="3" 
+                Text="{Binding Buttons[15]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="2" Grid.Column="4" 
+                Text="{Binding Buttons[16]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="2" Grid.Column="5" 
+                Text="{Binding Buttons[17]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+
+        <Button Grid.Row="3" Grid.Column="0" 
+                Text="{Binding Buttons[18]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="3" Grid.Column="1" 
+                Text="{Binding Buttons[19]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="3" Grid.Column="2" 
+                Text="{Binding Buttons[20]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="3" Grid.Column="3" 
+                Text="{Binding Buttons[21]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="3" Grid.Column="4" 
+                Text="{Binding Buttons[22]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="3" Grid.Column="5" 
+                Text="{Binding Buttons[23]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+
+        <Button Grid.Row="4" Grid.Column="0" 
+                Text="{Binding Buttons[24]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="4" Grid.Column="1" 
+                Text="{Binding Buttons[25]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="4" Grid.Column="2" 
+                Text="{Binding Buttons[26]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="4" Grid.Column="3" 
+                Text="{Binding Buttons[27]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="4" Grid.Column="4" 
+                Text="{Binding Buttons[28]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="4" Grid.Column="5" 
+                Text="{Binding Buttons[29]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+
+        <Button Grid.Row="5" Grid.Column="0" 
+                Text="{Binding Buttons[30]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="5" Grid.Column="1" 
+                Text="{Binding Buttons[31]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="5" Grid.Column="2" 
+                Text="{Binding Buttons[32]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="5" Grid.Column="3" 
+                Text="{Binding Buttons[33]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="5" Grid.Column="4" 
+                Text="{Binding Buttons[34]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+        <Button Grid.Row="5" Grid.Column="5" 
+                Text="{Binding Buttons[35]}" 
+                Command="{Binding NextStepCommand}"
+                CommandParameter="{Binding Source={RelativeSource Self}, Path=Text}"
+                Style="{StaticResource GameButtons}"
+                IsEnabled="{Binding IsGameStarted}"/>
+
+
+
+
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" 
+                x:Name="StartGameButton" Text="Начать игру" BackgroundColor="{StaticResource MainColor}" TextColor="Black" FontSize="40" FontAttributes="Bold"
+                Command="{Binding StartGameCommand}"
+                />
+    </Grid>
+</ContentPage>

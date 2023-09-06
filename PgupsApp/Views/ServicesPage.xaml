@@ -5,7 +5,8 @@
              Title="Сервисы"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
              xmlns:models="clr-namespace:PgupsApp.Models"
-             Shell.BackgroundColor="{StaticResource MainColor}">
+             Shell.BackgroundColor="{StaticResource MainColor}"
+             BackgroundColor="{StaticResource BackgroundColor}">
     <ContentPage.BindingContext>
         <viewModels:ServicesPageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>
@@ -24,7 +25,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
                WidthRequest="100"
                HeightRequest="100"
                Grid.Column="0" Grid.Row="0"
@@ -34,7 +35,7 @@
 
                 <Button TextColor="Black" 
                         ImageSource="{x:Static models:Icons.Dictionary500}" 
-                        BackgroundColor="{StaticResource BackgroundColor}"
+                        BackgroundColor="{StaticResource ForegroundColor}"
                         WidthRequest="95"
                         HeightRequest="45"
                         VerticalOptions="End"
@@ -43,7 +44,7 @@
                 <Label Text="Тесты" HorizontalOptions="Center"/>
             </VerticalStackLayout>
         </Frame>
-        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
                WidthRequest="100"
                HeightRequest="100"
                Grid.Column="1" Grid.Row="0"
@@ -53,7 +54,7 @@
 
                 <Button TextColor="Black" 
                         ImageSource="{x:Static models:Icons.Library500}" 
-                        BackgroundColor="{StaticResource BackgroundColor}"
+                        BackgroundColor="{StaticResource ForegroundColor}"
                         WidthRequest="95"
                         HeightRequest="45"
                         VerticalOptions="End"
@@ -64,7 +65,7 @@
             </VerticalStackLayout>
         </Frame>
 
-        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
                WidthRequest="100"
                HeightRequest="100"
                Grid.Column="2" Grid.Row="0"
@@ -74,7 +75,7 @@
 
                 <Button TextColor="Black" 
                         ImageSource="{x:Static models:Icons.NumberGame500}" 
-                        BackgroundColor="{StaticResource BackgroundColor}"
+                        BackgroundColor="{StaticResource ForegroundColor}"
                         WidthRequest="95"
                         HeightRequest="45"
                         VerticalOptions="End"
@@ -84,7 +85,7 @@
             </VerticalStackLayout>
         </Frame>
 
-        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
                WidthRequest="100"
                HeightRequest="100"
                Grid.Column="0" Grid.Row="1"
@@ -94,7 +95,7 @@
 
                 <Button TextColor="Black" 
                         ImageSource="{x:Static models:Icons.Tasks500}" 
-                        BackgroundColor="{StaticResource BackgroundColor}"
+                        BackgroundColor="{StaticResource ForegroundColor}"
                         WidthRequest="95"
                         HeightRequest="45"
                         VerticalOptions="End"
@@ -104,7 +105,7 @@
             </VerticalStackLayout>
         </Frame>
 
-        <Frame BackgroundColor="{StaticResource BackgroundColor}" 
+        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
                WidthRequest="100"
                HeightRequest="100"
                Grid.Column="1" Grid.Row="1"
@@ -114,7 +115,7 @@
 
                 <Button TextColor="Black" 
                         ImageSource="{x:Static models:Icons.Test500}" 
-                        BackgroundColor="{StaticResource BackgroundColor}"
+                        BackgroundColor="{StaticResource ForegroundColor}"
                         WidthRequest="95"
                         HeightRequest="45"
                         VerticalOptions="End"

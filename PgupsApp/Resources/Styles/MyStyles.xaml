@@ -46,6 +46,14 @@
         <Setter Property="CornerRadius" Value="15"/>
     </Style>
 
+    <Style TargetType="Button" x:Key="StandartButtons">
+        <Setter Property="BackgroundColor" Value="{StaticResource MainColor}"/>
+        <Setter Property="LineBreakMode" Value="WordWrap"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="7"/>
+        <Setter Property="CornerRadius" Value="15"/>
+    </Style>
+
     <Style TargetType="Grid" x:Key="Test">
         <Setter Property="VisualStateManager.VisualStateGroups">
             <VisualStateGroupList>
@@ -64,7 +72,7 @@
     </Style>
 
     <Style TargetType="Button" x:Key="AlphabetButtons">
-        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource ForegroundColor}"/>
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="LineBreakMode" Value="WordWrap"/>
         <Setter Property="FontSize" Value="Title"/>

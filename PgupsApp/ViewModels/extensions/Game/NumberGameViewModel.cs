@@ -1,47 +1,71 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PgupsApp.Models;
+using PgupsApp.Views.extensions.Game;
 using System.Windows.Input;
 
-namespace PgupsApp.ViewModels
+namespace PgupsApp.ViewModels.extensions.Game
 {
-    internal class NumberGameViewModel : ObservableObject
+    internal partial class NumberGameViewModel : BaseViewModel, IQueryAttributable
     {
-        public bool IsGameStarted { get; set; }
-        public int[] Buttons { get; set; }
-        NumberGameModel Game { get; set; }
-        public ICommand StartGameCommand { get; }
-        public ICommand NextStepCommand { get; }
+        [ObservableProperty]
+        private bool isGameStarted;
+        [ObservableProperty]
+        private int[] buttons;
+        private NumberGameModel Game;
+        private bool isGameFinished;
 
         public NumberGameViewModel()
         {
-            Game = new NumberGameModel(16);
-            NextStepCommand = new RelayCommand<string>(NextStep);
-            StartGameCommand = new RelayCommand(StartGame);
-            Buttons = new int[16];
+            
             IsGameStarted = false;
         }
-
+        [RelayCommand]
         private void StartGame()
         {
             IsGameStarted = true;
             Game.RefreshNumbers();
-            Buttons = Game.numbers;
-            Game.CorrectAnswer = 1;
-            RefreshProperties();
+            Buttons = Game.GetNumbers();
+
+        }
+        [RelayCommand]
+        private async Task NextStep(string number)
+        {
+            isGameFinished = Game.CheckAnswer(number);
+            Buttons = Game.GetNumbers();
+            if (isGameFinished)
+            {
+                await Shell.Current.GoToAsync(nameof(GameResultPage));
+            }
+
         }
 
-        private void NextStep(string number)
-        {
-            Game.CheckAnswer(number);
-            Buttons = Game.numbers;
-            RefreshProperties();
-        }
 
-        private void RefreshProperties()
+        public void ApplyQueryAttributes(IDictionary<string, object> query)
         {
-            OnPropertyChanged(nameof(Buttons));
-            OnPropertyChanged(nameof(IsGameStarted));
+            if (query.ContainsKey("difficulty") && query.ContainsKey("gridSize"))
+            {
+                int gridSize = Convert.ToInt32(query["gridSize"]);
+                int difficulty = Convert.ToInt32(query["difficulty"]);
+                switch (gridSize)
+                {
+                    case 1:
+                        Game = new NumberGameModel(16, difficulty);
+                        Buttons = new int[16];
+                        break;
+                    case 2:
+                        Game = new NumberGameModel(25, difficulty);
+                        Buttons = new int[25];
+                        break;
+                    case 3:
+                        Game = new NumberGameModel(36, difficulty);
+                        Buttons = new int[36];
+                        break;
+                    default:
+                        break;
+                }
+
+            }
         }
     }
 }

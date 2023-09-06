@@ -23,17 +23,17 @@
     <TabBar Route="HomePage">
         <Tab Title="Home" Icon="{x:Static models:Icons.Home500}">
             <ShellContent
-                Title="Home Page"
+                
                 ContentTemplate="{DataTemplate views:HomePage}" />
         </Tab>
         <Tab Title="Menu" Icon="{x:Static models:Icons.Menu500}">
             <ShellContent
-                Title="Services"
+                
                 ContentTemplate="{DataTemplate views:ServicesPage}"/>
         </Tab>
         <Tab Title="Profile" Icon="{x:Static models:Icons.Person500}">
             <ShellContent
-                Title="Profile Page"
+                
                 ContentTemplate="{DataTemplate views:ProfilePage}" />
         </Tab>
     </TabBar>

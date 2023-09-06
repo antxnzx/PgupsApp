@@ -1,13 +1,15 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Storage;
+
 using PgupsApp.Repositories;
 using PgupsApp.ViewModels;
 using PgupsApp.ViewModels.extensions.Dictionaries;
+using PgupsApp.ViewModels.extensions.Game;
 using PgupsApp.ViewModels.extensions.Testing;
 using PgupsApp.Views;
 using PgupsApp.Views.extensions.Dictionaries;
+using PgupsApp.Views.extensions.Game;
 using PgupsApp.Views.extensions.Testing;
-using System.Reflection;
+
 
 namespace PgupsApp;
 
@@ -31,12 +33,19 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<HomePage>();
 		builder.Services.AddSingleton<LoadingPage>();
-		builder.Services.AddSingleton<GamePage>();
 		builder.Services.AddSingleton<ServicesPage>();
+
+		builder.Services.AddSingleton<GameMenu>();
+		builder.Services.AddSingleton<GamePage16>();
+		builder.Services.AddSingleton<GamePage25>();
+		builder.Services.AddSingleton<GamePage36>();
+		builder.Services.AddSingleton<GameResultPage>();
+
 		builder.Services.AddSingleton<AllTestsPage>();
 		builder.Services.AddSingleton<SingleTest>();
 		builder.Services.AddSingleton<ResultTestMikhelsonaPage>();
 		builder.Services.AddSingleton<TestWithOneCorrectAnswerPage>();
+
 		builder.Services.AddSingleton<AllDictionariesPage>();
 		builder.Services.AddSingleton<CurrentDictionaryPage>();
 		builder.Services.AddSingleton<LetterPage>();
@@ -45,12 +54,17 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoginPageViewModel>();
 		builder.Services.AddSingleton<HomePageViewModel>();
 		builder.Services.AddSingleton<LoadingPageViewModel>();
-		builder.Services.AddSingleton<GamePage>();
 		builder.Services.AddSingleton<ServicesPageViewModel>();
+
+		builder.Services.AddSingleton<GameMenuViewModel>();
+		builder.Services.AddTransient<NumberGameViewModel>();
+		builder.Services.AddSingleton<GameResultViewModel>();
+		
 		builder.Services.AddSingleton<AllTestsPageViewModel>();
 		builder.Services.AddTransient<SingleTestViewModel>();
 		builder.Services.AddSingleton<ResultTestMikhelsonaViewModel>();
 		builder.Services.AddSingleton<TestWithOneCorrectAnswerViewModel>();
+
         builder.Services.AddSingleton<AllDictionariesViewModel>();
         builder.Services.AddTransient<CurrentDictionaryViewModel>();
         builder.Services.AddTransient<LetterViewModel>();

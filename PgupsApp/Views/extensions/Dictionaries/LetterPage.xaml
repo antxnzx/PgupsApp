@@ -25,7 +25,7 @@
                                            />
                         </Grid.RowDefinitions>
                         <BoxView Grid.ColumnSpan="2" Grid.Column="0" 
-                                 Color="{StaticResource White}" 
+                                 Color="{StaticResource ForegroundColor}" 
                                  CornerRadius="15"/>
       
                             
