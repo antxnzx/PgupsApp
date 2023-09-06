@@ -17,15 +17,17 @@ namespace PgupsApp.ViewModels.extensions.Game
 
         public NumberGameViewModel()
         {
-            
-            IsGameStarted = false;
+
         }
         [RelayCommand]
         private void StartGame()
         {
-            IsGameStarted = true;
-            Game.RefreshNumbers();
-            Buttons = Game.GetNumbers();
+            if (!IsGameStarted)
+            {
+                IsGameStarted = true;
+                Game.RefreshNumbers();
+                Buttons = Game.GetNumbers(); 
+            }
 
         }
         [RelayCommand]
@@ -47,6 +49,7 @@ namespace PgupsApp.ViewModels.extensions.Game
             {
                 int gridSize = Convert.ToInt32(query["gridSize"]);
                 int difficulty = Convert.ToInt32(query["difficulty"]);
+                IsGameStarted = false;
                 switch (gridSize)
                 {
                     case 1:

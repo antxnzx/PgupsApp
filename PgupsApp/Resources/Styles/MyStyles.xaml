@@ -29,7 +29,8 @@
 
         <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource MainColor}" />
         <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource MainColor}" />
-        
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource ForegroundColor}"/>
+
     </Style>
 
     <Style TargetType="ImageButton" x:Key="MenuIcons">
