@@ -2,11 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.extensions.Game.GameResultPage"
-             Title="GameResultPage">
-    <VerticalStackLayout>
+             xmlns:viewModels="clr-namespace:PgupsApp.ViewModels.extensions.Game"
+             Title="Результат"
+             Shell.BackgroundColor="{StaticResource MainColor}"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Shell.TabBarIsVisible="False"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <ContentPage.BindingContext>
+        <viewModels:GameResultViewModel/>
+    </ContentPage.BindingContext>
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.RowSpan="4" CornerRadius="15" Grid.Row="1" BackgroundColor="{StaticResource ForegroundColor}"/>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Поздравляем!"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Grid.Row="1"
+            FontSize="35"
+            FontAttributes="Bold"/>
+        <Label 
+            Text="Ваше время прохождения:"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Grid.Row="2"
+            FontSize="Title"/>
+        <Label 
+            Text="{Binding ResultOfTest}"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center" 
+            Grid.Row="3"
+            FontSize="70"/>
+
+        <Button HeightRequest="40" WidthRequest="200"
+                Text="Выйти из теста"
+                Style="{StaticResource StandartButtons}"
+                Command="{Binding ExitFromGameCommand}"
+                Grid.Row="4"/>
+    </Grid>
 </ContentPage>

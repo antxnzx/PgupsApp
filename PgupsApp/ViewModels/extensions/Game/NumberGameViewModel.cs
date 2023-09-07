@@ -14,16 +14,19 @@ namespace PgupsApp.ViewModels.extensions.Game
         private int[] buttons;
         private NumberGameModel Game;
         private bool isGameFinished;
+        private DateTime startTime;
+        private DateTime endTime;
 
         public NumberGameViewModel()
         {
-
+            
         }
         [RelayCommand]
         private void StartGame()
         {
             if (!IsGameStarted)
             {
+                startTime = DateTime.Now;
                 IsGameStarted = true;
                 Game.RefreshNumbers();
                 Buttons = Game.GetNumbers(); 
@@ -33,13 +36,17 @@ namespace PgupsApp.ViewModels.extensions.Game
         [RelayCommand]
         private async Task NextStep(string number)
         {
-            isGameFinished = Game.CheckAnswer(number);
-            Buttons = Game.GetNumbers();
-            if (isGameFinished)
+            if (IsGameStarted)
             {
-                await Shell.Current.GoToAsync(nameof(GameResultPage));
+                isGameFinished = Game.CheckAnswer(number);
+                Buttons = Game.GetNumbers();
+                if (isGameFinished)
+                {
+                    endTime = DateTime.Now;
+                    var playingTime = endTime - startTime;
+                    await Shell.Current.GoToAsync($"{nameof(GameResultPage)}?result={playingTime}");
+                }
             }
-
         }
 
 

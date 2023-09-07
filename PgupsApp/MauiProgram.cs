@@ -35,7 +35,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoadingPage>();
 		builder.Services.AddSingleton<ServicesPage>();
 
-		builder.Services.AddSingleton<GameMenu>();
+		builder.Services.AddTransient<GameMenu>();
 		builder.Services.AddSingleton<GamePage16>();
 		builder.Services.AddSingleton<GamePage25>();
 		builder.Services.AddSingleton<GamePage36>();
@@ -56,7 +56,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoadingPageViewModel>();
 		builder.Services.AddSingleton<ServicesPageViewModel>();
 
-		builder.Services.AddSingleton<GameMenuViewModel>();
+		builder.Services.AddTransient<GameMenuViewModel>();
 		builder.Services.AddTransient<NumberGameViewModel>();
 		builder.Services.AddSingleton<GameResultViewModel>();
 		

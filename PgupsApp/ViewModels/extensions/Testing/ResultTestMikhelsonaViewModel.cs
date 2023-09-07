@@ -1,7 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Newtonsoft.Json;
-using PgupsApp.Models;
 using PgupsApp.Models.TestResultAnalysis;
 using PgupsApp.Views;
 

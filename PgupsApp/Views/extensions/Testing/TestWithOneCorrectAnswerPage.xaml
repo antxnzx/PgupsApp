@@ -24,7 +24,7 @@
             <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
 
-        <Frame Grid.RowSpan="3" CornerRadius="15" Grid.Row="1" BackgroundColor="{StaticResource ForegroundColor}"/>
+        <Frame Grid.RowSpan="4" CornerRadius="15" Grid.Row="1" BackgroundColor="{StaticResource ForegroundColor}"/>
 
         <Label 
             Text="Вы ответили правильно на"
@@ -61,9 +61,9 @@
         </HorizontalStackLayout>
         <Button HeightRequest="40" WidthRequest="200"
                 Text="Выйти из теста"
-                Style="{StaticResource TestButtons}"
+                Style="{StaticResource StandartButtons}"
                 Command="{Binding ExitFromTestCommand}"
-                Grid.Row="5"/>
+                Grid.Row="4"/>
     </Grid>
 
 </ContentPage>

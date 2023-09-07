@@ -21,8 +21,9 @@
             <RowDefinition Height="12*"/>
             <RowDefinition Height="12*"/>
             <RowDefinition Height="12*"/>
-            <RowDefinition Height="48*"/>
-            <RowDefinition Height="16*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
@@ -32,7 +33,7 @@
         <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="1" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
         <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
         <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="3" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
-        <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="4" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
+        <Frame Grid.ColumnSpan="3" Grid.RowSpan="2" CornerRadius="15" Grid.Row="4" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
         
         <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Text="Зависимая позиция в общении (неуверенное поведение)" LineBreakMode="WordWrap"/>
         <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Text="{Binding PercentZavis}"/>
@@ -47,7 +48,7 @@
         <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Text="{Binding PercentAgressive}"/>
         <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Text="{Binding GradeAgressive}"/>
 
-        <VerticalStackLayout Margin="10" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="0">
+        <VerticalStackLayout Margin="10" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="4" Grid.Column="0">
             <Label VerticalOptions="Center"  
                Text="Коммуникативная компетентность - это умение выйти из любой ситуации, не потеряв ни грамма собственной внутренней свободы и в то же время не дав потерять её партнеру по общению. 
                Исходя из этого определения, можно говорить о трех позициях в общении: зависимой, компетентной и агрессивной."/>
@@ -58,8 +59,9 @@
         
         <Button Grid.ColumnSpan="3" Grid.Row="5" Grid.Column="0"  
                 HeightRequest="40" WidthRequest="200"
+                VerticalOptions="Center"
                 Text="Выйти из теста"
-                Style="{StaticResource TestButtons}"
+                Style="{StaticResource StandartButtons}"
                 Command="{Binding ExitFromTestCommand}"/>
     </Grid>
 </ContentPage>
