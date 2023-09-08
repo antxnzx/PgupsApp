@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,10 @@ namespace PgupsApp.ViewModels
 {
     public partial class HomePageViewModel : BaseViewModel
     {
+
         public HomePageViewModel() 
         {
-            Title = "Добро пожаловать!";
+
         }
     }
 }

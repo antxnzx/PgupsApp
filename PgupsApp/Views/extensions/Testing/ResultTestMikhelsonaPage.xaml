@@ -34,27 +34,27 @@
         <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
         <Frame Grid.ColumnSpan="3" CornerRadius="15" Grid.Row="3" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
         <Frame Grid.ColumnSpan="3" Grid.RowSpan="2" CornerRadius="15" Grid.Row="4" Grid.Column="0" BackgroundColor="{StaticResource ForegroundColor}"/>
-        
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Text="Зависимая позиция в общении (неуверенное поведение)" LineBreakMode="WordWrap"/>
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Text="{Binding PercentZavis}"/>
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="1" Grid.Column="2" Text="{Binding GradeZavis}"/>
+
+        <Label Style="{StaticResource AllText}" Grid.Row="1" Grid.Column="0" Text="Зависимая позиция в общении (неуверенное поведение)"/>
+        <Label Style="{StaticResource AllText}" Grid.Row="1" Grid.Column="1" Text="{Binding PercentZavis}"/>
+        <Label Style="{StaticResource AllText}" Grid.Row="1" Grid.Column="2" Text="{Binding GradeZavis}"/>
 
 
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" Text="Компетентная позиция в общении (уверенное поведение)" LineBreakMode="WordWrap"/>
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="2" Grid.Column="1" Text="{Binding PercentCompetent}"/>
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="2" Grid.Column="2" Text="{Binding GradeCompetent}"/>
+        <Label Style="{StaticResource AllText}" Grid.Row="2" Grid.Column="0" Text="Компетентная позиция в общении (уверенное поведение)" />
+        <Label Style="{StaticResource AllText}" Grid.Row="2" Grid.Column="1" Text="{Binding PercentCompetent}"/>
+        <Label Style="{StaticResource AllText}" Grid.Row="2" Grid.Column="2" Text="{Binding GradeCompetent}"/>
 
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" Text="Агрессивная позиция в общении (давящее поведение)" LineBreakMode="WordWrap"/>
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="1" Text="{Binding PercentAgressive}"/>
-        <Label Margin="10" VerticalOptions="Center" Grid.Row="3" Grid.Column="2" Text="{Binding GradeAgressive}"/>
+        <Label Style="{StaticResource AllText}" Grid.Row="3" Grid.Column="0" Text="Агрессивная позиция в общении (давящее поведение)" />
+        <Label Style="{StaticResource AllText}" Grid.Row="3" Grid.Column="1" Text="{Binding PercentAgressive}"/>
+        <Label Style="{StaticResource AllText}" Grid.Row="3" Grid.Column="2" Text="{Binding GradeAgressive}"/>
 
         <VerticalStackLayout Margin="10" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="4" Grid.Column="0">
-            <Label VerticalOptions="Center"  
+            <Label Style="{StaticResource AllText}" Margin="0"  
                Text="Коммуникативная компетентность - это умение выйти из любой ситуации, не потеряв ни грамма собственной внутренней свободы и в то же время не дав потерять её партнеру по общению. 
                Исходя из этого определения, можно говорить о трех позициях в общении: зависимой, компетентной и агрессивной."/>
-            <Label VerticalOptions="Center" Margin="0,5,0,0" Text="В первом случае (зависимая позиция) наблюдается неуверенное поведение, при котором человек теряет внутреннюю свободу;"/>
-            <Label VerticalOptions="Center" Margin="0,5,0,0" Text="В случае с агрессивной позицией – человек «подавляет» партнера по общению, при этом партнер теряет внутреннюю свободу;"/>
-            <Label VerticalOptions="Center" Margin="0,5,0,0" Text="Компетентная позиция – самая оптимальная, это общение на равных, это и будет та самая коммуникативная компетентность."/>
+            <Label Style="{StaticResource AllText}" Margin="0,5,0,0" Text="В первом случае (зависимая позиция) наблюдается неуверенное поведение, при котором человек теряет внутреннюю свободу;"/>
+            <Label Style="{StaticResource AllText}" Margin="0,5,0,0" Text="В случае с агрессивной позицией – человек «подавляет» партнера по общению, при этом партнер теряет внутреннюю свободу;"/>
+            <Label Style="{StaticResource AllText}" Margin="0,5,0,0" Text="Компетентная позиция – самая оптимальная, это общение на равных, это и будет та самая коммуникативная компетентность."/>
         </VerticalStackLayout>
         
         <Button Grid.ColumnSpan="3" Grid.Row="5" Grid.Column="0"  

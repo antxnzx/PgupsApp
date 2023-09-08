@@ -3,17 +3,279 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PgupsApp.Views.HomePage"
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
-             Title="HomePage"
+             Title="Домашняя страница"
              Shell.BackgroundColor="{StaticResource MainColor}"
              BackgroundColor="{StaticResource BackgroundColor}">
     <ContentPage.BindingContext>
         <viewModels:HomePageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <Label 
-            Text="{Binding Title}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button Text="1234121"/>
-    </VerticalStackLayout>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <Frame  CornerRadius="15" 
+                    BackgroundColor="{StaticResource ForegroundColor}"
+                    Padding="5"
+                    Margin="0,5,0,0"
+>
+                <Label 
+                    Text="Добро пожаловать!"
+                    Style="{StaticResource AllText}" 
+                    HorizontalOptions="Center"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    />
+            </Frame>
+            <Frame  CornerRadius="15" 
+                    BackgroundColor="{StaticResource ForegroundColor}"
+                    Padding="5">
+                <Label 
+                    Style="{StaticResource AllText}"
+                    Text="Ознакомьтесь с планом обучения и развития своих навыков"
+                    FontSize="Subtitle"
+                />
+            </Frame>
+
+                <VerticalStackLayout>
+                <Frame  CornerRadius="15" Padding="0" BackgroundColor="{StaticResource ForegroundColor}">
+                    <Label Style="{StaticResource AllText}"
+                           Text="Шаг 1: Обучение"
+                           FontSize="Title"
+                           FontAttributes="Bold"/>
+                </Frame>
+                <ScrollView Orientation="Horizontal" Margin="0,5,0,0" Padding="5,0">
+                        <HorizontalStackLayout Spacing="5">
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+                                <Frame  HeightRequest="150"
+                                        WidthRequest="200"
+                                        BackgroundColor="Red"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Инновационные курсы"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Погрузитесь в увлекательные и информативные онлайн- курсы по железнодорожному транспорту. Получите необходимые навыки и документ об обучении"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+                                <Frame  HeightRequest="150"
+                                        WidthRequest="200"
+                                        BackgroundColor="Red"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Тренинг-центр"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Посетите центр обучения, расположенный в самом сердце города, чтобы узнать о последних технологиях и инновациях в железнодорожной отрасли"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+                                <Frame  HeightRequest="150"
+                                        WidthRequest="200"
+                                        BackgroundColor="Red"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Наставники"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Свяжитесь с опытными наставниками-профессионалами, которые помогут вам развить навыки, необходимые для решения перспективных задач"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+                                <Frame  HeightRequest="150"
+                                        WidthRequest="200"
+                                        BackgroundColor="Red"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Общество студентов"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Присоединяйтесь к обществу студентов железнодорожного транспорта, чтобы общаться с единомышленниками и получать поддержку и мотивацию"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </HorizontalStackLayout>
+                    </ScrollView>
+                </VerticalStackLayout>
+
+
+            <VerticalStackLayout>
+                <Frame  CornerRadius="15" Padding="0" BackgroundColor="{StaticResource ForegroundColor}">
+                    <Label Style="{StaticResource AllText}"
+                           Text="Шаг 2: Практика"
+                           FontSize="Title"
+                           FontAttributes="Bold"/>
+                </Frame>
+                <ScrollView Orientation="Horizontal" Margin="0,5,0,0" Padding="5,0" >
+                    <HorizontalStackLayout Spacing="5">
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Стажировки на предприятиях"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Участвуйте в программе стажировок на крупнейших железнодорожных предприятиях, чтобы получить практический опыт работы в железнодорожной отрасли"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Проекты"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Применяйте свои знания в проектах, связанных с развитием железнодорожной отрасли. Работайте в команде и получайте ценный опыт профессиональной деятельности"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Поддержка ментора"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Сопровождайте свой путь к профессиональному развитию с помощью наставника, который поможет вам преодолеть сложности и решить любые задачи"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Хакатоны"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Участвуйте в хакатонах, чтобы учиться решать проблемы в железнодорожной отрасли. Работайте в команде и покажите свои лучшие знания и навыки"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout>
+                <Frame  CornerRadius="15" Padding="0" BackgroundColor="{StaticResource ForegroundColor}">
+                    <Label Style="{StaticResource AllText}"
+                           Text="Шаг 3: Наставничество"
+                           FontSize="Title"
+                           FontAttributes="Bold"/>
+                </Frame>
+                <ScrollView Orientation="Horizontal" Margin="0,5,0,0" Padding="5,0" >
+                    <HorizontalStackLayout Spacing="5">
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Личный наставник"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Подайте заявление на получение личного наставника, который поможет вам в ваших профессиональных и личных целях"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Конференции и вебинары"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Посещайте конференции и вебинары, чтобы оставаться в курсе последних новостей и тенденций в сфере железнодорожной отрасли"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Сеть контактов"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Увеличьте свою профессиональную сеть контактов, чтобы получать доступ к новым возможностям и ресурсам, которые помогут вам решать перспективные задачи в железнодорожной отрасли"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Frame  CornerRadius="15" Padding="0" BackgroundColor="{StaticResource ForegroundColor}">
+                    <Label Style="{StaticResource AllText}"
+                           Text="Шаг 4: Карьерный рост"
+                           FontSize="Title"
+                           FontAttributes="Bold"/>
+                </Frame>
+                <ScrollView Orientation="Horizontal" Margin="0,5,0,0" Padding="5,0">
+                    <HorizontalStackLayout Spacing="5">
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+                                <Frame  HeightRequest="150"
+                                        WidthRequest="200"
+                                        BackgroundColor="Green"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Трудоустройство"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Найдите свою работу мечты в крупнейших железнодорожных компаниях, которые ценят опыт, знания и навыки, полученные в Ярославском филиале ПГУПС."/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+                                <Frame  HeightRequest="150"
+                                        WidthRequest="200"
+                                        BackgroundColor="Green"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Продвижение по карьерной лестнице"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Трудитесь на железнодорожном транспорте и продвигайтесь по карьерной лестнице. Возможности для работников с высокой квалификацией неограничены"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        <Frame  CornerRadius="15" Padding="0,5" BackgroundColor="{StaticResource ForegroundColor}">
+                            <VerticalStackLayout WidthRequest="225">
+                                <Frame  HeightRequest="150"
+                                        WidthRequest="200"
+                                        BackgroundColor="Green"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Станьте инноватором"
+                                        FontSize="16"
+                                        FontAttributes="Bold"
+                                        Margin="10,10,10,0"/>
+                                <Label  Style="{StaticResource AllText}"
+                                        Text="Развивайте новые идеи и проекты на железнодорожном транспорте, чтобы стать инноватором в отрасли и получить уникальные возможности для карьерного роста"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+       
+        
+
 </ContentPage>

@@ -30,25 +30,18 @@
             Text="Таблицы Шульте — это очень распространенный метод диагностики внимания, его устойчивости, объёма и распределения между объектами. Также эти таблицы используют для тренировки периферического зрения. Благодаря увеличению поля зрения и умению распределять внимание дети осваивают навык быстрого чтения."/>
         <VerticalStackLayout Grid.Row="2">
             <Label 
-            LineBreakMode="WordWrap"
-            Margin="10,10,10,5"
-            VerticalOptions="Center"
-            Text="Уровни сложности:"/>
+                Style="{StaticResource AllText}"
+                Margin="10,10,10,5"
+                Text="Уровни сложности:"/>
             <Label 
-            LineBreakMode="WordWrap"
-            Margin="10"
-            VerticalOptions="Center"
-            Text="Легкий - последовательность типа: 1, 2, 3, 4, и т.д."/>
+                Style="{StaticResource AllText}"
+                Text="Легкий - последовательность типа: 1, 2, 3, 4, и т.д."/>
             <Label 
-            LineBreakMode="WordWrap"
-            Margin="10"
-            VerticalOptions="Center"
-            Text="Средний - последовательность типа: 16, 15, 14, и т.д."/>
+                Style="{StaticResource AllText}"
+                Text="Средний - последовательность типа: 16, 15, 14, и т.д."/>
             <Label 
-            LineBreakMode="WordWrap"
-            Margin="10"
-            VerticalOptions="Center"
-            Text="Сложный - последовательность типа: 1, 16, 2, 15, и т.д."/>
+                Style="{StaticResource AllText}"
+                Text="Сложный - последовательность типа: 1, 16, 2, 15, и т.д."/>
         </VerticalStackLayout>
         
 
