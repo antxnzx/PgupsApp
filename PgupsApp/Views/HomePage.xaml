@@ -14,7 +14,7 @@
         </Style>
         <Style TargetType="Frame" x:Key="PhotoFrame">
             <Setter Property="CornerRadius" Value="15"/>
-            <Setter Property="BackgroundColor" Value="Red"/>
+            <Setter Property="Padding" Value="0"/>
             <Setter Property="WidthRequest" Value="200"/>
             <Setter Property="HeightRequest" Value="150"/>
         </Style>
@@ -62,7 +62,10 @@
                         <HorizontalStackLayout Spacing="5">
                         <Frame Style="{StaticResource FramesWithinfo}" >
                             <VerticalStackLayout Style="{StaticResource StackInfo}">
-                                <Frame  Style="{StaticResource PhotoFrame}"/>
+                                <Frame  Style="{StaticResource PhotoFrame}">
+                                    <Image Source="homepagep1.jpg"
+                                           Aspect="AspectFill"/>
+                                </Frame>
                                 <Label  Style="{StaticResource AllText}"
                                         Text="Инновационные курсы"
                                         FontSize="16"
@@ -74,7 +77,10 @@
                         </Frame>
                         <Frame  Style="{StaticResource FramesWithinfo}">
                             <VerticalStackLayout Style="{StaticResource StackInfo}">
-                                <Frame  Style="{StaticResource PhotoFrame}"/>
+                                <Frame  Style="{StaticResource PhotoFrame}">
+                                    <Image Source="homepagep2.jpg"
+                                           Aspect="AspectFill"/>
+                                </Frame>
                                 <Label  Style="{StaticResource AllText}"
                                         Text="Тренинг-центр"
                                         FontSize="16"
@@ -86,7 +92,10 @@
                         </Frame>
                         <Frame  Style="{StaticResource FramesWithinfo}">
                             <VerticalStackLayout Style="{StaticResource StackInfo}">
-                                <Frame  Style="{StaticResource PhotoFrame}"/>
+                                <Frame  Style="{StaticResource PhotoFrame}">
+                                    <Image Source="homepagep3.jpg"
+                                           Aspect="AspectFill"/>
+                                </Frame>
                                 <Label  Style="{StaticResource AllText}"
                                         Text="Наставники"
                                         FontSize="16"
@@ -98,7 +107,10 @@
                         </Frame>
                         <Frame  Style="{StaticResource FramesWithinfo}">
                             <VerticalStackLayout Style="{StaticResource StackInfo}">
-                                <Frame  Style="{StaticResource PhotoFrame}"/>
+                                <Frame  Style="{StaticResource PhotoFrame}">
+                                    <Image Source="homepagep4.jpg"
+                                           Aspect="AspectFill"/>
+                                </Frame>
                                 <Label  Style="{StaticResource AllText}"
                                         Text="Общество студентов"
                                         FontSize="16"
@@ -236,7 +248,10 @@
                     <HorizontalStackLayout Spacing="5">
                         <Frame  Style="{StaticResource FramesWithinfo}">
                             <VerticalStackLayout Style="{StaticResource StackInfo}">
-                                <Frame  Style="{StaticResource PhotoFrame}"/>
+                                <Frame  Style="{StaticResource PhotoFrame}">
+                                    <Image Source="homepagep5.jpg"
+                                           Aspect="AspectFill"/>
+                                </Frame>
                                 <Label  Style="{StaticResource AllText}"
                                         Text="Трудоустройство"
                                         FontSize="16"
@@ -248,7 +263,10 @@
                         </Frame>
                         <Frame  Style="{StaticResource FramesWithinfo}">
                             <VerticalStackLayout Style="{StaticResource StackInfo}">
-                                <Frame  Style="{StaticResource PhotoFrame}"/>
+                                <Frame  Style="{StaticResource PhotoFrame}">
+                                    <Image Source="homepagep6.png"
+                                           Aspect="AspectFill"/>
+                                </Frame>
                                 <Label  Style="{StaticResource AllText}"
                                         Text="Продвижение по карьерной лестнице"
                                         FontSize="16"
@@ -260,7 +278,10 @@
                         </Frame>
                         <Frame  Style="{StaticResource FramesWithinfo}">
                             <VerticalStackLayout Style="{StaticResource StackInfo}">
-                                <Frame  Style="{StaticResource PhotoFrame}"/>
+                                <Frame  Style="{StaticResource PhotoFrame}">
+                                    <Image Source="homepagep7.jpg"
+                                           Aspect="AspectFill"/>
+                                </Frame>
                                 <Label  Style="{StaticResource AllText}"
                                         Text="Станьте инноватором"
                                         FontSize="16"
