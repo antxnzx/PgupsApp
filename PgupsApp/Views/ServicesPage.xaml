@@ -10,9 +10,30 @@
     <ContentPage.BindingContext>
         <viewModels:ServicesPageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <Style TargetType="Button" x:Key="ServiceButtons">
+            <Setter Property="WidthRequest" Value="95"/>
+            <Setter Property="HeightRequest" Value="45"/>
+            <Setter Property="VerticalOptions" Value="End"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+        </Style>
+
+        <Style TargetType="Frame" x:Key="ServiceFrame">
+            <Setter Property="WidthRequest" Value="100"/>
+            <Setter Property="HeightRequest" Value="100"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style TargetType="Label" x:Key="ServiceLabels">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
     
     
-    <Grid Padding="0,5,0,5" RowSpacing="5">
+    <Grid Padding="0,5,0,5" RowSpacing="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
@@ -25,104 +46,84 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
-               WidthRequest="100"
-               HeightRequest="100"
-               Grid.Column="0" Grid.Row="0"
-               Margin="0"
-               Padding="0">
-            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+        <Frame Style="{StaticResource ServiceFrame}"
+               BackgroundColor="White"
+               Grid.Column="0" Grid.Row="0">
+            <Frame Style="{StaticResource ServiceFrame}"
+               BackgroundColor="#30d9bf16">
+                <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
 
-                <Button TextColor="Black" 
-                        ImageSource="{x:Static models:Icons.Dictionary500}" 
-                        BackgroundColor="{StaticResource ForegroundColor}"
-                        WidthRequest="95"
-                        HeightRequest="45"
-                        VerticalOptions="End"
-                        HorizontalOptions="Center"
-                        Command="{Binding GoToTestPageCommand}"/>
-                <Label Text="Тесты" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+                    <Button 
+                    Style="{StaticResource ServiceButtons}"
+                    ImageSource="{x:Static models:Icons.Dictionary500}" 
+                    Command="{Binding GoToTestPageCommand}"/>
+                    <Label Text="Тесты" Style="{StaticResource ServiceLabels}"/>
+                </VerticalStackLayout>
+            </Frame>
         </Frame>
-        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
-               WidthRequest="100"
-               HeightRequest="100"
-               Grid.Column="1" Grid.Row="0"
-               Margin="0"
-               Padding="0">
-            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+        <Frame Style="{StaticResource ServiceFrame}"
+               BackgroundColor="Transparent"
+               Grid.Column="1" Grid.Row="0">
+            <Frame Style="{StaticResource ServiceFrame}"
+                   BackgroundColor="#304d6cf7">
+                <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
 
-                <Button TextColor="Black" 
-                        ImageSource="{x:Static models:Icons.Library500}" 
-                        BackgroundColor="{StaticResource ForegroundColor}"
-                        WidthRequest="95"
-                        HeightRequest="45"
-                        VerticalOptions="End"
-                        HorizontalOptions="Center"
-                        Command="{Binding GoToDictPageCommand}"
-                        />
-                <Label Text="Словари" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+                    <Button 
+                    Style="{StaticResource ServiceButtons}"
+                    ImageSource="{x:Static models:Icons.Library500}" 
+                    Command="{Binding GoToDictPageCommand}"/>
+                    <Label Text="Словари" Style="{StaticResource ServiceLabels}"/>
+                </VerticalStackLayout>
+            </Frame>
         </Frame>
 
-        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
-               WidthRequest="100"
-               HeightRequest="100"
+        <Frame Style="{StaticResource ServiceFrame}"
                Grid.Column="2" Grid.Row="0"
-               Margin="0"
-               Padding="0">
-            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+               BackgroundColor="White">
 
-                <Button TextColor="Black" 
-                        ImageSource="{x:Static models:Icons.NumberGame500}" 
-                        BackgroundColor="{StaticResource ForegroundColor}"
-                        WidthRequest="95"
-                        HeightRequest="45"
-                        VerticalOptions="End"
-                        HorizontalOptions="Center"
-                        Command="{Binding GoToGamePageCommand}"/>
-                <Label Text="Игра" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+            <Frame Style="{StaticResource ServiceFrame}"
+               BackgroundColor="#30ff4800">
+                <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+                    <Button 
+                    Style="{StaticResource ServiceButtons}"
+                    ImageSource="{x:Static models:Icons.NumberGame500}" 
+                    Command="{Binding GoToGamePageCommand}"/>
+                    <Label Text="Игра" Style="{StaticResource ServiceLabels}"/>
+                </VerticalStackLayout>
+            </Frame>
         </Frame>
 
-        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
-               WidthRequest="100"
-               HeightRequest="100"
+        <Frame Style="{StaticResource ServiceFrame}"
                Grid.Column="0" Grid.Row="1"
-               Margin="0"
-               Padding="0">
-            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+               BackgroundColor="White">
 
-                <Button TextColor="Black" 
-                        ImageSource="{x:Static models:Icons.Tasks500}" 
-                        BackgroundColor="{StaticResource ForegroundColor}"
-                        WidthRequest="95"
-                        HeightRequest="45"
-                        VerticalOptions="End"
-                        HorizontalOptions="Center"
-                        />
-                <Label Text="Кейсы" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+            <Frame Style="{StaticResource ServiceFrame}"
+                   BackgroundColor="#30ff4800">
+                <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+
+                    <Button 
+                    Style="{StaticResource ServiceButtons}"
+                    TextColor="Black" 
+                    ImageSource="{x:Static models:Icons.Tasks500}"/>
+                    <Label Text="Кейсы" Style="{StaticResource ServiceLabels}"/>
+                </VerticalStackLayout>
+            </Frame>
         </Frame>
 
-        <Frame BackgroundColor="{StaticResource ForegroundColor}" 
-               WidthRequest="100"
-               HeightRequest="100"
+        <Frame Style="{StaticResource ServiceFrame}"
                Grid.Column="1" Grid.Row="1"
-               Margin="0"
-               Padding="0">
-            <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
+               BackgroundColor="White">
+            <Frame Style="{StaticResource ServiceFrame}"
+                   BackgroundColor="#30d9bf16">
+                <VerticalStackLayout  VerticalOptions="Center" HorizontalOptions="Center">
 
-                <Button TextColor="Black" 
-                        ImageSource="{x:Static models:Icons.Test500}" 
-                        BackgroundColor="{StaticResource ForegroundColor}"
-                        WidthRequest="95"
-                        HeightRequest="45"
-                        VerticalOptions="End"
-                        HorizontalOptions="Center"
-                        />
-                <Label Text="Обучение" HorizontalOptions="Center"/>
-            </VerticalStackLayout>
+                    <Button 
+                    Style="{StaticResource ServiceButtons}"
+                    TextColor="Black" 
+                    ImageSource="{x:Static models:Icons.Test500}" />
+                    <Label Text="Обучение" Style="{StaticResource ServiceLabels}"/>
+                </VerticalStackLayout>
+            </Frame>
         </Frame>
 
 

@@ -5,7 +5,10 @@
              xmlns:viewModels="clr-namespace:PgupsApp.ViewModels"
              Title="Домашняя страница"
              Shell.BackgroundColor="{StaticResource MainColor}"
-             BackgroundColor="{StaticResource BackgroundColor}">
+             BackgroundColor="{StaticResource BackgroundColor}"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="True">
     <ContentPage.Resources>
         <Style TargetType="Frame" x:Key="FramesWithinfo">
             <Setter Property="CornerRadius" Value="15"/>

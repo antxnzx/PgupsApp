@@ -26,7 +26,7 @@ namespace PgupsApp.ViewModels
             }
             catch (Exception ex)
             {
-                // An unexpected error occurred. No browser may be installed on the device.
+
             }
         }
         [RelayCommand]
